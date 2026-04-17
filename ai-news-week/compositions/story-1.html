@@ -1,0 +1,233 @@
+<template id="story-1-template">
+  <div data-composition-id="story-1" data-width="1080" data-height="1920" data-start="0" data-duration="10">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <div class="s1-root">
+      <div class="s1-ghost">01</div>
+
+      <div class="s1-meta-top">
+        <span>ENTRY 01 OF 05</span>
+        <span>axios.com</span>
+      </div>
+
+      <div class="s1-body">
+        <div class="s1-tag">MODELS · RELEASE</div>
+        <h1 class="s1-headline">
+          <span class="s1-h-bold">ANTHROPIC SHIPS</span>
+          <span class="s1-h-italic">a sharper</span>
+          <span class="s1-h-bold">OPUS.</span>
+        </h1>
+        <div class="s1-path">claude.ai / api.anthropic.com</div>
+
+        <div class="s1-metric-row">
+          <div class="s1-metric-label">VERSION</div>
+          <div class="s1-metric">4.7</div>
+          <div class="s1-metric-tag"><span class="s1-dot"></span>released apr 16</div>
+        </div>
+
+        <div class="s1-callout">
+          <div class="s1-callout-label">WHAT IT MEANS</div>
+          <div class="s1-callout-body">The best Claude yet for code and vision. If you pay for Claude, you just got a free upgrade.</div>
+        </div>
+      </div>
+
+      <div class="s1-foot">
+        <div class="s1-dots"><span class="on"></span><span></span><span></span><span></span><span></span></div>
+        <div class="s1-counter">01 / 05</div>
+      </div>
+    </div>
+
+    <style>
+      [data-composition-id="story-1"] {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: #F5EDE0;
+        overflow: hidden;
+        color: #1A1A1A;
+      }
+      [data-composition-id="story-1"] .s1-root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 140px 70px 120px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+      [data-composition-id="story-1"] .s1-ghost {
+        position: absolute;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 880px;
+        line-height: 0.8;
+        color: #FF4A1C;
+        opacity: 0.12;
+        top: 60px;
+        left: -30px;
+        letter-spacing: -0.06em;
+        pointer-events: none;
+      }
+      [data-composition-id="story-1"] .s1-meta-top {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.14em;
+        padding-bottom: 18px;
+        border-bottom: 2px solid #1A1A1A;
+        z-index: 2;
+      }
+      [data-composition-id="story-1"] .s1-body {
+        z-index: 2;
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+      }
+      [data-composition-id="story-1"] .s1-tag {
+        display: inline-block;
+        align-self: flex-start;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.18em;
+        padding: 10px 22px;
+        border: 1.5px solid #1A1A1A;
+        border-radius: 999px;
+        color: #1A1A1A;
+      }
+      [data-composition-id="story-1"] .s1-headline {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 120px;
+        line-height: 0.94;
+        letter-spacing: -0.04em;
+        margin: 0;
+      }
+      [data-composition-id="story-1"] .s1-h-bold { display: block; color: #1A1A1A; }
+      [data-composition-id="story-1"] .s1-h-italic {
+        display: inline-block;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        color: #FF4A1C;
+        font-size: 92px;
+        margin-right: 18px;
+        transform: translateY(-6px);
+      }
+      [data-composition-id="story-1"] .s1-path {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.08em;
+        opacity: 0.7;
+      }
+      [data-composition-id="story-1"] .s1-metric-row {
+        display: flex;
+        align-items: baseline;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+      [data-composition-id="story-1"] .s1-metric-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.2em;
+        opacity: 0.8;
+      }
+      [data-composition-id="story-1"] .s1-metric {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 240px;
+        line-height: 1;
+        color: #FF4A1C;
+        letter-spacing: -0.04em;
+        font-variant-numeric: tabular-nums;
+      }
+      [data-composition-id="story-1"] .s1-metric-tag {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        color: #1A1A1A;
+        opacity: 0.85;
+      }
+      [data-composition-id="story-1"] .s1-dot {
+        width: 14px; height: 14px; border-radius: 50%;
+        background: #FF4A1C;
+        display: inline-block;
+      }
+      [data-composition-id="story-1"] .s1-callout {
+        background: rgba(255,74,28,0.12);
+        border-left: 6px solid #FF4A1C;
+        padding: 24px 30px;
+        max-width: 920px;
+      }
+      [data-composition-id="story-1"] .s1-callout-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        letter-spacing: 0.2em;
+        color: #FF4A1C;
+        margin-bottom: 10px;
+      }
+      [data-composition-id="story-1"] .s1-callout-body {
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 30px;
+        line-height: 1.35;
+        color: #1A1A1A;
+        opacity: 0.92;
+      }
+      [data-composition-id="story-1"] .s1-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.1em;
+      }
+      [data-composition-id="story-1"] .s1-dots {
+        display: flex;
+        gap: 14px;
+      }
+      [data-composition-id="story-1"] .s1-dots span {
+        width: 12px; height: 12px; border-radius: 50%;
+        background: #1A1A1A;
+        opacity: 0.25;
+      }
+      [data-composition-id="story-1"] .s1-dots span.on {
+        background: #FF4A1C;
+        opacity: 1;
+      }
+      [data-composition-id="story-1"] .s1-counter { opacity: 0.7; }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const root = document.querySelector('[data-composition-id="story-1"]');
+        const q = (s) => root.querySelector(s);
+        tl.from(q('.s1-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
+        tl.from(q('.s1-tag'), { x: -30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.25);
+        tl.from(q('.s1-h-bold:first-of-type'), { y: 40, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.35);
+        tl.from(q('.s1-h-italic'), { x: -30, opacity: 0, duration: 0.5, ease: 'back.out(1.6)' }, 0.55);
+        tl.from(q('.s1-h-bold:last-of-type'), { y: 40, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.7);
+        tl.from(q('.s1-path'), { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.9);
+        tl.from(q('.s1-metric-label'), { opacity: 0, duration: 0.4 }, 1.05);
+        tl.fromTo(q('.s1-metric'), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: 'back.out(1.8)' }, 1.1);
+        tl.from(q('.s1-metric-tag'), { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.45);
+        tl.from(q('.s1-callout'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 1.55);
+        tl.from(q('.s1-foot'), { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' }, 1.9);
+        tl.fromTo(q('.s1-ghost'), { opacity: 0, y: 30 }, { opacity: 0.12, y: 0, duration: 1.5, ease: 'power1.out' }, 0);
+        tl.to(q('.s1-ghost'), { y: -20, duration: 8, ease: 'sine.inOut' }, 1);
+        tl.to(q('.s1-dot'), { scale: 1.4, duration: 0.8, ease: 'sine.inOut', yoyo: true, repeat: 2 }, 2);
+        window.__timelines['story-1'] = tl;
+      })();
+    </script>
+  </div>
+</template>

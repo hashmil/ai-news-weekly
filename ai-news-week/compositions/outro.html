@@ -1,0 +1,173 @@
+<template id="outro-template">
+  <div data-composition-id="outro" data-width="1080" data-height="1920" data-start="0" data-duration="6">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <div class="o-root">
+      <div class="o-mauve-circle"></div>
+      <div class="o-saffron-dot"></div>
+
+      <div class="o-meta-top">
+        <span>COLOPHON</span>
+        <span>AI WEEKLY · 17/04/2026</span>
+      </div>
+
+      <div class="o-title-block">
+        <h1 class="o-title">
+          <span class="o-t1">SEE YOU</span>
+          <span class="o-t2">next week.</span>
+        </h1>
+        <div class="o-sub">Follow for a fresh edit every Friday.</div>
+      </div>
+
+      <div class="o-colophon">
+        <div class="o-col">
+          <div class="o-col-head">SOURCES</div>
+          <div class="o-col-body">Axios · TechCrunch · CNBC · Visa · Google</div>
+        </div>
+        <div class="o-col">
+          <div class="o-col-head">TYPE</div>
+          <div class="o-col-body">Space Grotesk · Inter Tight · JetBrains Mono</div>
+        </div>
+        <div class="o-col">
+          <div class="o-col-head">NEXT ISSUE</div>
+          <div class="o-col-body">N°18 · APR 24</div>
+        </div>
+      </div>
+
+      <div class="o-foot">→ TAP TO FOLLOW</div>
+    </div>
+
+    <style>
+      [data-composition-id="outro"] {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: #1A1A1A;
+        overflow: hidden;
+        color: #F5EDE0;
+      }
+      [data-composition-id="outro"] .o-root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 140px 80px 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+      }
+      [data-composition-id="outro"] .o-mauve-circle {
+        position: absolute;
+        left: -260px;
+        bottom: -280px;
+        width: 800px;
+        height: 800px;
+        border-radius: 50%;
+        background: #D4A5E8;
+        opacity: 0.32;
+      }
+      [data-composition-id="outro"] .o-saffron-dot {
+        position: absolute;
+        right: 120px;
+        top: 220px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: #FFC93C;
+      }
+      [data-composition-id="outro"] .o-meta-top {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.14em;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #F5EDE0;
+        z-index: 2;
+      }
+      [data-composition-id="outro"] .o-title-block {
+        z-index: 2;
+        position: relative;
+      }
+      [data-composition-id="outro"] .o-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 210px;
+        line-height: 0.92;
+        letter-spacing: -0.05em;
+        margin: 0;
+      }
+      [data-composition-id="outro"] .o-t1 { display: block; color: #F5EDE0; }
+      [data-composition-id="outro"] .o-t2 {
+        display: block;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        color: #FFC93C;
+        font-size: 160px;
+      }
+      [data-composition-id="outro"] .o-sub {
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 40px;
+        margin-top: 36px;
+        max-width: 720px;
+        line-height: 1.3;
+        opacity: 0.94;
+      }
+      [data-composition-id="outro"] .o-colophon {
+        display: flex;
+        gap: 40px;
+        z-index: 2;
+        font-family: 'JetBrains Mono', monospace;
+        padding-top: 36px;
+        border-top: 2px solid rgba(245,237,224,0.4);
+      }
+      [data-composition-id="outro"] .o-col { flex: 1; }
+      [data-composition-id="outro"] .o-col-head {
+        font-size: 18px;
+        letter-spacing: 0.2em;
+        color: #FFC93C;
+        margin-bottom: 10px;
+      }
+      [data-composition-id="outro"] .o-col-body {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #F5EDE0;
+        opacity: 0.88;
+      }
+      [data-composition-id="outro"] .o-foot {
+        display: flex;
+        justify-content: flex-end;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 28px;
+        letter-spacing: 0.2em;
+        color: #FFC93C;
+        z-index: 2;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const root = document.querySelector('[data-composition-id="outro"]');
+        const q = (s) => root.querySelector(s);
+        tl.from(q('.o-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
+        tl.from(q('.o-t1'), { y: 60, opacity: 0, duration: 0.65, ease: 'expo.out' }, 0.25);
+        tl.from(q('.o-t2'), { y: 60, opacity: 0, duration: 0.65, ease: 'back.out(1.4)' }, 0.45);
+        tl.from(q('.o-sub'), { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 0.7);
+        tl.from(q('.o-colophon'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 0.9);
+        tl.from(q('.o-foot'), { x: 30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.15);
+        tl.fromTo(q('.o-mauve-circle'), { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 0.32, duration: 1.0, ease: 'power2.out' }, 0);
+        tl.fromTo(q('.o-saffron-dot'), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: 'back.out(2)' }, 0.4);
+        tl.to(q('.o-saffron-dot'), { scale: 1.1, duration: 1.5, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.2);
+        // Outro is final scene — fade to black in last 0.6s
+        tl.to([q('.o-title-block'), q('.o-colophon'), q('.o-foot'), q('.o-meta-top'), q('.o-saffron-dot'), q('.o-mauve-circle')], { opacity: 0, duration: 0.6, ease: 'power2.in' }, 5.4);
+        window.__timelines['outro'] = tl;
+      })();
+    </script>
+  </div>
+</template>

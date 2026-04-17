@@ -1,0 +1,243 @@
+<template id="story-2-template">
+  <div data-composition-id="story-2" data-width="1080" data-height="1920" data-start="0" data-duration="10">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <div class="s2-root">
+      <div class="s2-ghost">02</div>
+      <div class="s2-mauve"></div>
+
+      <div class="s2-meta-top">
+        <span>ENTRY 02 OF 05</span>
+        <span>techcrunch.com</span>
+      </div>
+
+      <div class="s2-body">
+        <div class="s2-tag">AGENTS · DESKTOP</div>
+        <h1 class="s2-headline">
+          <span class="s2-h-italic">a new</span>
+          <span class="s2-h-bold">CODEX TAKES</span>
+          <span class="s2-h-bold2">THE CURSOR.</span>
+        </h1>
+        <div class="s2-path">openai.com / codex</div>
+
+        <div class="s2-metric-wrap">
+          <div class="s2-metric-label">POWERS GRANTED</div>
+          <div class="s2-metric">SEE · MOVE · CLICK</div>
+          <div class="s2-metric-tag"><span class="s2-dot"></span>macOS background mode</div>
+        </div>
+
+        <div class="s2-callout">
+          <div class="s2-callout-label">WHAT IT MEANS</div>
+          <div class="s2-callout-body">Your A.I. can now drive the machine. Useful, and a very new kind of trust.</div>
+        </div>
+      </div>
+
+      <div class="s2-foot">
+        <div class="s2-dots"><span></span><span class="on"></span><span></span><span></span><span></span></div>
+        <div class="s2-counter">02 / 05</div>
+      </div>
+    </div>
+
+    <style>
+      [data-composition-id="story-2"] {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: #1A1A1A;
+        overflow: hidden;
+        color: #F5EDE0;
+      }
+      [data-composition-id="story-2"] .s2-root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 140px 70px 120px;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+      }
+      [data-composition-id="story-2"] .s2-ghost {
+        position: absolute;
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 900px;
+        line-height: 0.8;
+        color: #FFC93C;
+        opacity: 0.1;
+        top: 80px;
+        right: -60px;
+        letter-spacing: -0.06em;
+        pointer-events: none;
+      }
+      [data-composition-id="story-2"] .s2-mauve {
+        position: absolute;
+        left: -140px;
+        bottom: 180px;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        background: #D4A5E8;
+        opacity: 0.35;
+      }
+      [data-composition-id="story-2"] .s2-meta-top {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.14em;
+        padding-bottom: 18px;
+        border-bottom: 2px solid #F5EDE0;
+        z-index: 2;
+        color: #F5EDE0;
+      }
+      [data-composition-id="story-2"] .s2-body {
+        z-index: 2;
+        position: relative;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 28px;
+      }
+      [data-composition-id="story-2"] .s2-tag {
+        align-self: flex-start;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.18em;
+        padding: 10px 22px;
+        border: 1.5px solid #F5EDE0;
+        border-radius: 999px;
+        color: #F5EDE0;
+      }
+      [data-composition-id="story-2"] .s2-headline {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 118px;
+        line-height: 0.94;
+        letter-spacing: -0.04em;
+        margin: 0;
+      }
+      [data-composition-id="story-2"] .s2-h-italic {
+        display: block;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        color: #FFC93C;
+        font-size: 92px;
+        margin-bottom: 4px;
+      }
+      [data-composition-id="story-2"] .s2-h-bold,
+      [data-composition-id="story-2"] .s2-h-bold2 {
+        display: block;
+        color: #F5EDE0;
+      }
+      [data-composition-id="story-2"] .s2-h-bold2 { color: #FFC93C; }
+      [data-composition-id="story-2"] .s2-path {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.08em;
+        opacity: 0.75;
+      }
+      [data-composition-id="story-2"] .s2-metric-wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      [data-composition-id="story-2"] .s2-metric-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.2em;
+        opacity: 0.85;
+      }
+      [data-composition-id="story-2"] .s2-metric {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 82px;
+        line-height: 1;
+        color: #FFC93C;
+        letter-spacing: -0.02em;
+      }
+      [data-composition-id="story-2"] .s2-metric-tag {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px;
+        opacity: 0.9;
+      }
+      [data-composition-id="story-2"] .s2-dot {
+        width: 14px; height: 14px; border-radius: 50%;
+        background: #FFC93C;
+      }
+      [data-composition-id="story-2"] .s2-callout {
+        background: rgba(255,201,60,0.12);
+        border-left: 6px solid #FFC93C;
+        padding: 24px 30px;
+        max-width: 920px;
+      }
+      [data-composition-id="story-2"] .s2-callout-label {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 18px;
+        letter-spacing: 0.2em;
+        color: #FFC93C;
+        margin-bottom: 10px;
+      }
+      [data-composition-id="story-2"] .s2-callout-body {
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 30px;
+        line-height: 1.35;
+        color: #F5EDE0;
+        opacity: 0.92;
+      }
+      [data-composition-id="story-2"] .s2-foot {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 2;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 20px;
+        letter-spacing: 0.1em;
+        color: #F5EDE0;
+      }
+      [data-composition-id="story-2"] .s2-dots { display: flex; gap: 14px; }
+      [data-composition-id="story-2"] .s2-dots span {
+        width: 12px; height: 12px; border-radius: 50%;
+        background: #F5EDE0;
+        opacity: 0.3;
+      }
+      [data-composition-id="story-2"] .s2-dots span.on {
+        background: #FFC93C;
+        opacity: 1;
+      }
+      [data-composition-id="story-2"] .s2-counter { opacity: 0.75; }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const root = document.querySelector('[data-composition-id="story-2"]');
+        const q = (s) => root.querySelector(s);
+        tl.from(q('.s2-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
+        tl.from(q('.s2-tag'), { x: -30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.25);
+        tl.from(q('.s2-h-italic'), { x: -40, opacity: 0, duration: 0.55, ease: 'back.out(1.5)' }, 0.35);
+        tl.from(q('.s2-h-bold'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.5);
+        tl.from(q('.s2-h-bold2'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.65);
+        tl.from(q('.s2-path'), { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.85);
+        tl.from(q('.s2-metric-label'), { opacity: 0, x: -10, duration: 0.4, ease: 'power2.out' }, 1.0);
+        tl.from(q('.s2-metric'), { y: 30, opacity: 0, duration: 0.55, ease: 'power3.out' }, 1.1);
+        tl.from(q('.s2-metric-tag'), { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.35);
+        tl.from(q('.s2-callout'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 1.55);
+        tl.from(q('.s2-foot'), { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' }, 1.9);
+        tl.fromTo(q('.s2-ghost'), { opacity: 0, x: 40 }, { opacity: 0.1, x: 0, duration: 1.6, ease: 'power1.out' }, 0);
+        tl.to(q('.s2-ghost'), { x: -20, duration: 8, ease: 'sine.inOut' }, 1);
+        tl.fromTo(q('.s2-mauve'), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 0.35, duration: 1.0, ease: 'power2.out' }, 0.1);
+        tl.to(q('.s2-mauve'), { scale: 1.08, duration: 3, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        window.__timelines['story-2'] = tl;
+      })();
+    </script>
+  </div>
+</template>

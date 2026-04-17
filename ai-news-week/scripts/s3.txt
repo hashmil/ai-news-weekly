@@ -1,0 +1,1 @@
+OpenAI gave Codex the keys to your computer. It can now see your screen, move your cursor, and click and type on your behalf. The assistant became an operator.

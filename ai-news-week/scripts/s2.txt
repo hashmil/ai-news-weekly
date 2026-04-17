@@ -1,0 +1,1 @@
+Anthropic just dropped Claude Opus four point seven. Sharper coding, better vision, and a big bump on benchmarks. Their most capable Opus yet.

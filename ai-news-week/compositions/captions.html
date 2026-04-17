@@ -1,0 +1,135 @@
+<template id="captions-template">
+  <div data-composition-id="captions" data-width="1080" data-height="1920" data-start="0" data-duration="60">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700;800&display=swap" rel="stylesheet">
+
+    <div class="cap-container" id="cap-container"></div>
+
+    <style>
+      [data-composition-id="captions"] {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        pointer-events: none;
+        background: transparent;
+        overflow: visible;
+      }
+      [data-composition-id="captions"] .cap-container {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 380px;
+        width: 100%;
+        text-align: center;
+        z-index: 100;
+      }
+      [data-composition-id="captions"] .cap-group {
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        transform: translateX(-50%);
+        width: 920px;
+        opacity: 0;
+        visibility: hidden;
+        font-family: 'JetBrains Mono', monospace;
+        font-weight: 800;
+        font-size: 62px;
+        line-height: 1.18;
+        letter-spacing: -0.01em;
+        color: #F5EDE0;
+        padding: 0 30px;
+        text-transform: uppercase;
+        text-shadow:
+          4px 4px 0 #1A1A1A,
+          -2px -2px 0 #1A1A1A,
+          2px -2px 0 #1A1A1A,
+          -2px 2px 0 #1A1A1A,
+          0 0 18px rgba(26,26,26,0.55);
+      }
+      [data-composition-id="captions"] .cap-group .hl {
+        color: #FFC93C;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const GROUPS = [
+          { text: "This week in AI,", start: 0.05, end: 1.10, hl: "AI" },
+          { text: "five stories that actually", start: 1.28, end: 3.98, hl: "five" },
+          { text: "matter.", start: 4.00, end: 4.50, hl: "matter" },
+          { text: "Anthropic just dropped Claude", start: 4.07, end: 5.97, hl: "Anthropic" },
+          { text: "Opus 4.7, sharper coding,", start: 6.06, end: 7.95, hl: "4.7" },
+          { text: "better vision, and a", start: 7.95, end: 8.89 },
+          { text: "big bump on benchmarks,", start: 8.89, end: 10.30, hl: "bump" },
+          { text: "their most capable Opus yet.", start: 10.35, end: 11.96, hl: "capable" },
+          { text: "OpenAI gave Codex", start: 12.01, end: 13.84, hl: "Codex" },
+          { text: "the keys to your computer.", start: 13.84, end: 16.92, hl: "computer" },
+          { text: "It can now see", start: 16.97, end: 17.51 },
+          { text: "your screen, move your", start: 17.51, end: 18.68, hl: "screen" },
+          { text: "cursor, and click and", start: 18.68, end: 19.69, hl: "click" },
+          { text: "type on your behalf.", start: 19.69, end: 20.84, hl: "behalf" },
+          { text: "The assistant became an operator.", start: 20.89, end: 22.72, hl: "operator" },
+          { text: "Visa just gave AI", start: 22.77, end: 24.67, hl: "Visa" },
+          { text: "agents a wallet", start: 24.68, end: 26.71, hl: "wallet" },
+          { text: "that can make purchases", start: 26.75, end: 27.62, hl: "purchases" },
+          { text: "on your behalf autonomously.", start: 27.62, end: 29.43, hl: "autonomously" },
+          { text: "The checkout is no", start: 29.49, end: 30.38 },
+          { text: "longer yours alone.", start: 30.38, end: 31.62, hl: "alone" },
+          { text: "Anthropic secured 3.5 gigawatts", start: 31.67, end: 36.12, hl: "3.5" },
+          { text: "of Google computing power,", start: 36.24, end: 37.68, hl: "Google" },
+          { text: "enough electricity to run", start: 37.73, end: 39.00 },
+          { text: "a small country.", start: 39.00, end: 39.80, hl: "country" },
+          { text: "That is how much", start: 39.85, end: 40.48 },
+          { text: "juice the next generation", start: 40.48, end: 42.63, hl: "juice" },
+          { text: "of AI needs.", start: 42.63, end: 43.95, hl: "needs" },
+          { text: "Google Gemini now answers", start: 44.05, end: 45.40, hl: "Gemini" },
+          { text: "questions with interactive 3D", start: 45.40, end: 47.20, hl: "3D" },
+          { text: "models you can rotate", start: 47.29, end: 48.49 },
+          { text: "and poke.", start: 48.49, end: 49.09, hl: "poke" },
+          { text: "AI responses just got", start: 49.33, end: 50.85 },
+          { text: "a lot more visual.", start: 50.85, end: 52.24, hl: "visual" },
+          { text: "That is the week", start: 52.43, end: 54.07 },
+          { text: "five stories, one minute", start: 54.07, end: 56.41, hl: "one minute" },
+          { text: "follow for more.", start: 56.41, end: 57.38, hl: "follow" }
+        ];
+
+        const container = document.getElementById('cap-container');
+        GROUPS.forEach((g, i) => {
+          const el = document.createElement('div');
+          el.className = 'cap-group';
+          el.id = 'cg-' + i;
+          if (g.hl && g.text.includes(g.hl)) {
+            // Split around hl, keep highlight visually distinct
+            const parts = g.text.split(g.hl);
+            el.innerHTML = parts[0] + '<span class="hl">' + g.hl + '</span>' + parts.slice(1).join(g.hl);
+          } else {
+            el.textContent = g.text;
+          }
+          container.appendChild(el);
+        });
+
+        const tl = gsap.timeline({ paused: true });
+
+        GROUPS.forEach((g, i) => {
+          const sel = '#cg-' + i;
+          const fadeIn = 0.14;
+          const fadeOut = 0.10;
+          // Activate: become visible + animate in
+          tl.set(sel, { visibility: 'visible' }, g.start);
+          tl.fromTo(sel,
+            { opacity: 0, y: 18, scale: 0.96 },
+            { opacity: 1, y: 0, scale: 1, duration: fadeIn, ease: 'power3.out' },
+            g.start
+          );
+          // Hard out at end
+          const outStart = Math.max(g.start + fadeIn, g.end - fadeOut);
+          tl.to(sel, { opacity: 0, y: -10, duration: fadeOut, ease: 'power2.in' }, outStart);
+          tl.set(sel, { visibility: 'hidden' }, g.end);
+        });
+
+        window.__timelines['captions'] = tl;
+      })();
+    </script>
+  </div>
+</template>

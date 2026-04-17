@@ -1,0 +1,20 @@
+SCENE 1 — COVER (0-4s):
+This week in A.I. Five stories that actually matter.
+
+SCENE 2 — OPUS 4.7 (4-14s):
+Anthropic just dropped Claude Opus four point seven. Sharper coding, better vision, and a big bump on benchmarks. Their most capable Opus yet.
+
+SCENE 3 — CODEX COMPUTER USE (14-24s):
+OpenAI gave Codex the keys to your computer. It can now see your screen, move your cursor, and click and type on your behalf. The assistant became an operator.
+
+SCENE 4 — VISA AGENTS (24-34s):
+Visa just gave A.I. agents a wallet. They can now make purchases on your behalf, autonomously. The checkout is no longer yours alone.
+
+SCENE 5 — COMPUTE (34-44s):
+Anthropic secured three point five gigawatts of Google computing power. Enough electricity to run a small country. That is how much juice the next generation of A.I. needs.
+
+SCENE 6 — GEMINI 3D (44-54s):
+Google Gemini now answers questions with interactive three dee models you can rotate and poke. A.I. responses just got a lot more visual.
+
+SCENE 7 — OUTRO (54-60s):
+That is the week. Five stories, one minute. Follow for more.

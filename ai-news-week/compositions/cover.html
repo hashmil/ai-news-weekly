@@ -1,0 +1,166 @@
+<template id="cover-template">
+  <div data-composition-id="cover" data-width="1080" data-height="1920" data-start="0" data-duration="4">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <div class="cover-root">
+      <div class="cover-grain"></div>
+      <div class="cover-ink-circle"></div>
+      <div class="cover-saffron-dot"></div>
+
+      <div class="cover-meta cover-meta-top">
+        <span class="cover-issue">ISSUE N°17 &nbsp;·&nbsp; APR 17 2026</span>
+        <span class="cover-source">AI WEEKLY</span>
+      </div>
+
+      <div class="cover-title-block">
+        <div class="cover-kicker">FIVE STORIES</div>
+        <h1 class="cover-title">
+          <span class="cover-t1">THIS WEEK</span>
+          <span class="cover-t2">in</span>
+          <span class="cover-t3">A.I.</span>
+        </h1>
+        <div class="cover-sub">A minute of signal, edited like a magazine.</div>
+      </div>
+
+      <div class="cover-foot">
+        <span class="cover-swipe">→ SWIPE</span>
+      </div>
+    </div>
+
+    <style>
+      [data-composition-id="cover"] {
+        position: relative;
+        width: 1080px;
+        height: 1920px;
+        background: #FF4A1C;
+        overflow: hidden;
+        font-family: 'Space Grotesk', sans-serif;
+        color: #F5EDE0;
+      }
+      [data-composition-id="cover"] .cover-root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        padding: 140px 80px 160px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        box-sizing: border-box;
+      }
+      [data-composition-id="cover"] .cover-grain {
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(ellipse at 30% 80%, rgba(26,26,26,0.18), rgba(26,26,26,0) 55%);
+        pointer-events: none;
+      }
+      [data-composition-id="cover"] .cover-ink-circle {
+        position: absolute;
+        right: -260px;
+        bottom: -320px;
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        background: #1A1A1A;
+        opacity: 0.9;
+      }
+      [data-composition-id="cover"] .cover-saffron-dot {
+        position: absolute;
+        left: 80px;
+        top: 320px;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        background: #FFC93C;
+      }
+      [data-composition-id="cover"] .cover-meta {
+        display: flex;
+        justify-content: space-between;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 22px;
+        letter-spacing: 0.08em;
+        padding-bottom: 20px;
+        border-bottom: 2px solid #F5EDE0;
+        z-index: 2;
+      }
+      [data-composition-id="cover"] .cover-title-block {
+        z-index: 2;
+        position: relative;
+      }
+      [data-composition-id="cover"] .cover-kicker {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 24px;
+        letter-spacing: 0.2em;
+        color: #FFC93C;
+        margin-bottom: 30px;
+      }
+      [data-composition-id="cover"] .cover-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-weight: 700;
+        font-size: 220px;
+        line-height: 0.92;
+        letter-spacing: -0.04em;
+        margin: 0;
+      }
+      [data-composition-id="cover"] .cover-t1 {
+        display: block;
+        color: #F5EDE0;
+      }
+      [data-composition-id="cover"] .cover-t2 {
+        display: inline-block;
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        color: #FFC93C;
+        font-size: 160px;
+        margin-right: 30px;
+        transform: translateY(-10px);
+      }
+      [data-composition-id="cover"] .cover-t3 {
+        display: inline-block;
+        color: #F5EDE0;
+      }
+      [data-composition-id="cover"] .cover-sub {
+        font-family: 'Inter Tight', sans-serif;
+        font-weight: 300;
+        font-style: italic;
+        font-size: 42px;
+        margin-top: 40px;
+        max-width: 720px;
+        line-height: 1.3;
+        opacity: 0.92;
+      }
+      [data-composition-id="cover"] .cover-foot {
+        display: flex;
+        justify-content: flex-end;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 28px;
+        letter-spacing: 0.2em;
+        color: #FFC93C;
+        z-index: 2;
+      }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <script>
+      window.__timelines = window.__timelines || {};
+      (function () {
+        const tl = gsap.timeline({ paused: true });
+        const root = document.querySelector('[data-composition-id="cover"]');
+        const q = (s) => root.querySelector(s);
+        tl.from(q('.cover-meta-top'), { y: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.15);
+        tl.from(q('.cover-kicker'), { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 0.3);
+        tl.from(q('.cover-t1'), { y: 80, opacity: 0, duration: 0.7, ease: 'expo.out' }, 0.4);
+        tl.from(q('.cover-t2'), { y: 60, opacity: 0, rotate: -3, duration: 0.6, ease: 'back.out(1.6)' }, 0.6);
+        tl.from(q('.cover-t3'), { y: 80, opacity: 0, duration: 0.7, ease: 'expo.out' }, 0.75);
+        tl.from(q('.cover-sub'), { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 0.95);
+        tl.from(q('.cover-foot'), { x: 40, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.2);
+        tl.fromTo(q('.cover-ink-circle'), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 0.9, duration: 1.0, ease: 'power2.out' }, 0.1);
+        tl.fromTo(q('.cover-saffron-dot'), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: 'back.out(2)' }, 0.5);
+        tl.to(q('.cover-saffron-dot'), { scale: 1.1, duration: 2.0, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        window.__timelines['cover'] = tl;
+      })();
+    </script>
+  </div>
+</template>
