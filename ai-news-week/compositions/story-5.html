@@ -2,40 +2,51 @@
   <div data-composition-id="story-5" data-width="1080" data-height="1920" data-start="0" data-duration="10">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <div class="s5-wipe"></div>
+
     <div class="s5-root">
+      <div class="s5-bg-halftone"></div>
+      <div class="s5-bg-orbit"></div>
       <div class="s5-ghost">05</div>
       <div class="s5-mauve-dot"></div>
       <div class="s5-saffron-ring"></div>
+      <div class="s5-saffron-ring2"></div>
 
       <div class="s5-meta-top">
-        <span>ENTRY 05 OF 05</span>
-        <span>blog.google</span>
+        <span class="s5-meta-l">ENTRY 05 OF 05</span>
+        <span class="s5-meta-r">blog.google</span>
       </div>
 
       <div class="s5-body">
-        <div class="s5-tag">CONSUMER · INTERFACE</div>
+        <div class="s5-tag">CONSUMER &middot; INTERFACE</div>
         <h1 class="s5-headline">
-          <span class="s5-h-bold">GEMINI ANSWERS</span>
-          <span class="s5-h-italic">in three</span>
-          <span class="s5-h-bold2">DIMENSIONS.</span>
+          <span class="s5-h-bold" data-split>GEMINI ANSWERS</span>
+          <span class="s5-h-italic" data-split>in three</span>
+          <span class="s5-h-bold2" data-split>DIMENSIONS.</span>
         </h1>
         <div class="s5-path">gemini.google.com</div>
 
         <div class="s5-metric-row">
           <div class="s5-metric-label">NEW IN RESPONSES</div>
-          <div class="s5-metric">3D · INTERACTIVE</div>
-          <div class="s5-metric-tag"><span class="s5-dot"></span>rotate · zoom · simulate</div>
+          <div class="s5-metric" data-split>3D &middot; INTERACTIVE</div>
+          <div class="s5-metric-tag">
+            <span class="s5-dot"></span>
+            <span class="s5-mt-word">rotate</span><span class="s5-mt-sep"> &middot; </span><span class="s5-mt-word">zoom</span><span class="s5-mt-sep"> &middot; </span><span class="s5-mt-word">simulate</span>
+          </div>
         </div>
 
         <div class="s5-callout">
+          <div class="s5-callout-stripe"></div>
           <div class="s5-callout-label">WHAT IT MEANS</div>
           <div class="s5-callout-body">Search is becoming a playground. Answers you can touch, not just read.</div>
         </div>
       </div>
 
       <div class="s5-foot">
-        <div class="s5-dots"><span></span><span></span><span></span><span></span><span class="on"></span></div>
-        <div class="s5-counter">05 / 05</div>
+        <div class="s5-dots">
+          <span class="s5-d"></span><span class="s5-d"></span><span class="s5-d"></span><span class="s5-d"></span><span class="s5-d s5-d-on"></span>
+        </div>
+        <div class="s5-counter">05 &divide; 05</div>
       </div>
     </div>
 
@@ -48,6 +59,13 @@
         overflow: hidden;
         color: #F5EDE0;
       }
+      [data-composition-id="story-5"] .s5-wipe {
+        position: absolute;
+        inset: 0;
+        background: #FF4A1C;
+        z-index: 999;
+        transform-origin: right center;
+      }
       [data-composition-id="story-5"] .s5-root {
         position: relative;
         width: 100%;
@@ -56,6 +74,41 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+      }
+      [data-composition-id="story-5"] .s5-bg-halftone {
+        position: absolute;
+        left: -60px; top: -60px; right: -60px; bottom: -60px;
+        pointer-events: none;
+        background-image: radial-gradient(circle, rgba(212,165,232,0.08) 2px, transparent 2.5px);
+        background-size: 36px 36px;
+        z-index: 0;
+      }
+      [data-composition-id="story-5"] .s5-bg-orbit {
+        position: absolute;
+        left: 50%; top: 50%;
+        width: 1400px; height: 1400px;
+        margin-left: -700px; margin-top: -700px;
+        pointer-events: none;
+        border-radius: 50%;
+        border: 1.5px solid rgba(212,165,232,0.12);
+        box-shadow:
+          0 0 0 180px rgba(0,0,0,0),
+          inset 0 0 0 2px transparent;
+        z-index: 0;
+      }
+      [data-composition-id="story-5"] .s5-bg-orbit::before {
+        content: '';
+        position: absolute;
+        inset: 120px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(255,201,60,0.1);
+      }
+      [data-composition-id="story-5"] .s5-bg-orbit::after {
+        content: '';
+        position: absolute;
+        inset: 260px;
+        border-radius: 50%;
+        border: 1.5px solid rgba(212,165,232,0.12);
       }
       [data-composition-id="story-5"] .s5-ghost {
         position: absolute;
@@ -82,12 +135,22 @@
       }
       [data-composition-id="story-5"] .s5-saffron-ring {
         position: absolute;
-        left: 180px;
-        top: 480px;
-        width: 80px;
-        height: 80px;
+        right: 80px;
+        top: 232px;
+        width: 68px;
+        height: 68px;
         border-radius: 50%;
         border: 3px solid #FFC93C;
+        opacity: 0.75;
+      }
+      [data-composition-id="story-5"] .s5-saffron-ring2 {
+        position: absolute;
+        right: 180px;
+        top: 256px;
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        border: 2px solid #D4A5E8;
         opacity: 0.7;
       }
       [data-composition-id="story-5"] .s5-meta-top {
@@ -117,6 +180,7 @@
         padding: 10px 22px;
         border: 1.5px solid #F5EDE0;
         border-radius: 999px;
+        transform-origin: left center;
       }
       [data-composition-id="story-5"] .s5-headline {
         font-family: 'Space Grotesk', sans-serif;
@@ -139,6 +203,10 @@
         transform: translateY(-4px);
       }
       [data-composition-id="story-5"] .s5-h-bold2 { display: inline-block; color: #D4A5E8; }
+      [data-composition-id="story-5"] .chr {
+        display: inline-block;
+        transform-origin: 50% 100%;
+      }
       [data-composition-id="story-5"] .s5-path {
         font-family: 'JetBrains Mono', monospace;
         font-size: 22px;
@@ -172,11 +240,20 @@
         width: 14px; height: 14px; border-radius: 50%;
         background: #D4A5E8;
       }
+      [data-composition-id="story-5"] .s5-mt-word { display: inline-block; transform-origin: center; }
+      [data-composition-id="story-5"] .s5-mt-sep { display: inline-block; color: #D4A5E8; opacity: 0.6; }
       [data-composition-id="story-5"] .s5-callout {
+        position: relative;
         background: rgba(212,165,232,0.14);
-        border-left: 6px solid #D4A5E8;
-        padding: 24px 30px;
+        padding: 24px 30px 24px 36px;
         max-width: 920px;
+      }
+      [data-composition-id="story-5"] .s5-callout-stripe {
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 6px;
+        background: #D4A5E8;
+        transform-origin: top center;
       }
       [data-composition-id="story-5"] .s5-callout-label {
         font-family: 'JetBrains Mono', monospace;
@@ -204,15 +281,13 @@
         letter-spacing: 0.1em;
       }
       [data-composition-id="story-5"] .s5-dots { display: flex; gap: 14px; }
-      [data-composition-id="story-5"] .s5-dots span {
+      [data-composition-id="story-5"] .s5-d {
         width: 12px; height: 12px; border-radius: 50%;
         background: #F5EDE0;
         opacity: 0.3;
+        display: inline-block;
       }
-      [data-composition-id="story-5"] .s5-dots span.on {
-        background: #D4A5E8;
-        opacity: 1;
-      }
+      [data-composition-id="story-5"] .s5-d-on { background: #D4A5E8; opacity: 1; }
       [data-composition-id="story-5"] .s5-counter { opacity: 0.8; }
     </style>
 
@@ -220,26 +295,71 @@
     <script>
       window.__timelines = window.__timelines || {};
       (function () {
-        const tl = gsap.timeline({ paused: true });
         const root = document.querySelector('[data-composition-id="story-5"]');
-        const q = (s) => root.querySelector(s);
-        tl.from(q('.s5-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
-        tl.from(q('.s5-tag'), { x: -30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.25);
-        tl.from(q('.s5-h-bold'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.35);
-        tl.from(q('.s5-h-italic'), { x: -40, opacity: 0, duration: 0.55, ease: 'back.out(1.5)' }, 0.55);
-        tl.from(q('.s5-h-bold2'), { x: 40, opacity: 0, duration: 0.55, ease: 'back.out(1.5)' }, 0.7);
-        tl.from(q('.s5-path'), { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.9);
-        tl.from(q('.s5-metric-label'), { opacity: 0, x: -10, duration: 0.4, ease: 'power2.out' }, 1.0);
-        tl.fromTo(q('.s5-metric'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, ease: 'power3.out' }, 1.15);
-        tl.from(q('.s5-metric-tag'), { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.4);
-        tl.from(q('.s5-callout'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 1.55);
-        tl.from(q('.s5-foot'), { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' }, 1.9);
-        tl.fromTo(q('.s5-ghost'), { opacity: 0, y: 30 }, { opacity: 0.1, y: 0, duration: 1.5, ease: 'power1.out' }, 0);
-        tl.to(q('.s5-ghost'), { y: -20, duration: 8, ease: 'sine.inOut' }, 1);
-        tl.fromTo(q('.s5-mauve-dot'), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 0.25, duration: 1, ease: 'power2.out' }, 0.15);
-        tl.to(q('.s5-mauve-dot'), { scale: 1.08, duration: 3, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
-        tl.fromTo(q('.s5-saffron-ring'), { scale: 0, opacity: 0 }, { scale: 1, opacity: 0.7, duration: 0.6, ease: 'back.out(2)' }, 0.8);
-        tl.to(q('.s5-saffron-ring'), { rotation: 360, duration: 9, ease: 'none' }, 0.8);
+        const qa = (s) => Array.from(root.querySelectorAll(s));
+
+        qa('[data-split]').forEach(el => {
+          const txt = el.textContent;
+          el.textContent = '';
+          for (const ch of txt) {
+            const s = document.createElement('span');
+            s.className = 'chr';
+            s.textContent = ch === ' ' ? '\u00A0' : ch;
+            el.appendChild(s);
+          }
+        });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Wipe (vermillion, right)
+        tl.to('.s5-wipe', { scaleX: 0, duration: 0.52, ease: 'power4.inOut' }, 0);
+        tl.set('.s5-wipe', { display: 'none' }, 0.52);
+
+        tl.from('.s5-meta-l', { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.32);
+        tl.from('.s5-meta-r', { x: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.38);
+
+        tl.from('.s5-tag', { x: -30, rotation: -6, opacity: 0, duration: 0.5, ease: 'back.out(2)' }, 0.45);
+
+        tl.from('.s5-h-bold .chr', { y: 70, rotation: 3, opacity: 0, duration: 0.5, ease: 'back.out(2)', stagger: 0.02 }, 0.55);
+        tl.from('.s5-h-italic .chr', { x: -20, opacity: 0, duration: 0.4, ease: 'power3.out', stagger: 0.015 }, 0.85);
+        tl.from('.s5-h-bold2 .chr', { x: 30, rotation: 6, scale: 1.2, opacity: 0, duration: 0.5, ease: 'back.out(2.4)', stagger: 0.03 }, 1.05);
+
+        tl.from('.s5-path', { x: -30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.3);
+
+        tl.from('.s5-metric-label', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.45);
+        tl.from('.s5-metric .chr', { y: 40, rotation: 8, opacity: 0, duration: 0.45, ease: 'back.out(2)', stagger: 0.028 }, 1.55);
+        tl.from('.s5-metric-tag', { opacity: 0, y: 10, duration: 0.4, ease: 'power2.out' }, 1.9);
+        tl.from('.s5-mt-word', { y: 12, scale: 0.6, opacity: 0, duration: 0.35, ease: 'back.out(2)', stagger: 0.08 }, 1.95);
+        tl.from('.s5-mt-sep', { opacity: 0, scale: 0, duration: 0.25, ease: 'back.out(2)', stagger: 0.08 }, 2.0);
+
+        tl.fromTo('.s5-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.2);
+        tl.from('.s5-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.25);
+        tl.from('.s5-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.45);
+        tl.from('.s5-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.55);
+
+        tl.from('.s5-dots .s5-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.7);
+        tl.from('.s5-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.8);
+
+        // BG patterns
+        tl.fromTo('.s5-bg-halftone', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.25);
+        tl.to('.s5-bg-halftone', { x: 36, y: 36, duration: 14, ease: 'none' }, 0);
+        tl.fromTo('.s5-bg-orbit', { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 1.2, ease: 'power2.out' }, 0.3);
+        tl.to('.s5-bg-orbit', { rotation: 360, duration: 40, ease: 'none' }, 0);
+
+        tl.fromTo('.s5-ghost', { opacity: 0, y: 30, scale: 0.95 }, { opacity: 0.1, y: 0, scale: 1, duration: 1.4, ease: 'power2.out' }, 0.3);
+        tl.to('.s5-ghost', { y: -20, rotation: -1, duration: 7, ease: 'sine.inOut' }, 1.8);
+        tl.fromTo('.s5-mauve-dot', { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 0.25, duration: 1, ease: 'power2.out' }, 0.3);
+        tl.to('.s5-mauve-dot', { scale: 1.1, duration: 2.8, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        tl.fromTo('.s5-saffron-ring', { scale: 0, opacity: 0 }, { scale: 1, opacity: 0.7, duration: 0.6, ease: 'back.out(2.4)' }, 0.8);
+        tl.to('.s5-saffron-ring', { rotation: 360, duration: 9, ease: 'none' }, 0.8);
+        tl.fromTo('.s5-saffron-ring2', { scale: 0, opacity: 0 }, { scale: 1, opacity: 0.6, duration: 0.5, ease: 'back.out(2.4)' }, 1.0);
+        tl.to('.s5-saffron-ring2', { rotation: -360, duration: 9, ease: 'none' }, 1.0);
+        tl.to('.s5-mt-word', { y: -4, duration: 1.2, ease: 'sine.inOut', yoyo: true, repeat: 2, stagger: 0.1 }, 3.5);
+        tl.to('.s5-d-on', { scale: 1.3, duration: 0.8, ease: 'sine.inOut', yoyo: true, repeat: 4 }, 3.2);
+
+        tl.to('[data-composition-id="story-5"]', { opacity: 0, duration: 0.18, ease: 'power2.in' }, 9.82);
+        tl.set('[data-composition-id="story-5"]', { opacity: 0, visibility: 'hidden' }, 10.0);
+
         window.__timelines['story-5'] = tl;
       })();
     </script>

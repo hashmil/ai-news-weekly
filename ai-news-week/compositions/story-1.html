@@ -2,38 +2,46 @@
   <div data-composition-id="story-1" data-width="1080" data-height="1920" data-start="0" data-duration="10">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <div class="s1-wipe"></div>
+
     <div class="s1-root">
+      <div class="s1-bg-halftone"></div>
+      <div class="s1-bg-columns"></div>
       <div class="s1-ghost">01</div>
+      <div class="s1-vermillion-streak"></div>
 
       <div class="s1-meta-top">
-        <span>ENTRY 01 OF 05</span>
-        <span>axios.com</span>
+        <span class="s1-meta-l">ENTRY 01 OF 05</span>
+        <span class="s1-meta-r">axios.com</span>
       </div>
 
       <div class="s1-body">
-        <div class="s1-tag">MODELS · RELEASE</div>
+        <div class="s1-tag">MODELS &middot; RELEASE</div>
         <h1 class="s1-headline">
-          <span class="s1-h-bold">ANTHROPIC SHIPS</span>
-          <span class="s1-h-italic">a sharper</span>
-          <span class="s1-h-bold">OPUS.</span>
+          <span class="s1-h-bold" data-split>ANTHROPIC SHIPS</span>
+          <span class="s1-h-italic" data-split>a sharper</span>
+          <span class="s1-h-bold2" data-split>OPUS.</span>
         </h1>
-        <div class="s1-path">claude.ai / api.anthropic.com</div>
+        <div class="s1-path">claude.ai &middot; api.anthropic.com</div>
 
         <div class="s1-metric-row">
           <div class="s1-metric-label">VERSION</div>
-          <div class="s1-metric">4.7</div>
+          <div class="s1-metric" id="s1-num">0.0</div>
           <div class="s1-metric-tag"><span class="s1-dot"></span>released apr 16</div>
         </div>
 
         <div class="s1-callout">
+          <div class="s1-callout-stripe"></div>
           <div class="s1-callout-label">WHAT IT MEANS</div>
           <div class="s1-callout-body">The best Claude yet for code and vision. If you pay for Claude, you just got a free upgrade.</div>
         </div>
       </div>
 
       <div class="s1-foot">
-        <div class="s1-dots"><span class="on"></span><span></span><span></span><span></span><span></span></div>
-        <div class="s1-counter">01 / 05</div>
+        <div class="s1-dots">
+          <span class="s1-d s1-d-on"></span><span class="s1-d"></span><span class="s1-d"></span><span class="s1-d"></span><span class="s1-d"></span>
+        </div>
+        <div class="s1-counter">01 &divide; 05</div>
       </div>
     </div>
 
@@ -46,6 +54,13 @@
         overflow: hidden;
         color: #1A1A1A;
       }
+      [data-composition-id="story-1"] .s1-wipe {
+        position: absolute;
+        inset: 0;
+        background: #2B4BFF;
+        z-index: 999;
+        transform-origin: right center;
+      }
       [data-composition-id="story-1"] .s1-root {
         position: relative;
         width: 100%;
@@ -54,6 +69,21 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+      }
+      [data-composition-id="story-1"] .s1-bg-halftone {
+        position: absolute;
+        left: -60px; top: -60px; right: -60px; bottom: -60px;
+        pointer-events: none;
+        background-image: radial-gradient(circle, rgba(26,26,26,0.08) 2px, transparent 2.5px);
+        background-size: 34px 34px;
+        z-index: 0;
+      }
+      [data-composition-id="story-1"] .s1-bg-columns {
+        position: absolute;
+        left: -120px; top: 0; right: -120px; bottom: 0;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(90deg, rgba(255,74,28,0.065) 0, rgba(255,74,28,0.065) 1.5px, transparent 1.5px, transparent 90px);
+        z-index: 0;
       }
       [data-composition-id="story-1"] .s1-ghost {
         position: absolute;
@@ -67,6 +97,15 @@
         left: -30px;
         letter-spacing: -0.06em;
         pointer-events: none;
+      }
+      [data-composition-id="story-1"] .s1-vermillion-streak {
+        position: absolute;
+        right: 0;
+        top: 248px;
+        width: 180px;
+        height: 8px;
+        background: #FF4A1C;
+        opacity: 0.85;
       }
       [data-composition-id="story-1"] .s1-meta-top {
         display: flex;
@@ -88,7 +127,6 @@
         gap: 28px;
       }
       [data-composition-id="story-1"] .s1-tag {
-        display: inline-block;
         align-self: flex-start;
         font-family: 'JetBrains Mono', monospace;
         font-size: 20px;
@@ -97,6 +135,7 @@
         border: 1.5px solid #1A1A1A;
         border-radius: 999px;
         color: #1A1A1A;
+        transform-origin: left center;
       }
       [data-composition-id="story-1"] .s1-headline {
         font-family: 'Space Grotesk', sans-serif;
@@ -106,7 +145,8 @@
         letter-spacing: -0.04em;
         margin: 0;
       }
-      [data-composition-id="story-1"] .s1-h-bold { display: block; color: #1A1A1A; }
+      [data-composition-id="story-1"] .s1-h-bold,
+      [data-composition-id="story-1"] .s1-h-bold2 { display: block; color: #1A1A1A; }
       [data-composition-id="story-1"] .s1-h-italic {
         display: inline-block;
         font-family: 'Inter Tight', sans-serif;
@@ -116,6 +156,10 @@
         font-size: 92px;
         margin-right: 18px;
         transform: translateY(-6px);
+      }
+      [data-composition-id="story-1"] .chr {
+        display: inline-block;
+        transform-origin: 50% 100%;
       }
       [data-composition-id="story-1"] .s1-path {
         font-family: 'JetBrains Mono', monospace;
@@ -159,10 +203,18 @@
         display: inline-block;
       }
       [data-composition-id="story-1"] .s1-callout {
+        position: relative;
         background: rgba(255,74,28,0.12);
-        border-left: 6px solid #FF4A1C;
-        padding: 24px 30px;
+        padding: 24px 30px 24px 36px;
         max-width: 920px;
+        overflow: hidden;
+      }
+      [data-composition-id="story-1"] .s1-callout-stripe {
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 6px;
+        background: #FF4A1C;
+        transform-origin: top center;
       }
       [data-composition-id="story-1"] .s1-callout-label {
         font-family: 'JetBrains Mono', monospace;
@@ -193,12 +245,13 @@
         display: flex;
         gap: 14px;
       }
-      [data-composition-id="story-1"] .s1-dots span {
+      [data-composition-id="story-1"] .s1-d {
         width: 12px; height: 12px; border-radius: 50%;
         background: #1A1A1A;
         opacity: 0.25;
+        display: inline-block;
       }
-      [data-composition-id="story-1"] .s1-dots span.on {
+      [data-composition-id="story-1"] .s1-d-on {
         background: #FF4A1C;
         opacity: 1;
       }
@@ -209,23 +262,90 @@
     <script>
       window.__timelines = window.__timelines || {};
       (function () {
-        const tl = gsap.timeline({ paused: true });
         const root = document.querySelector('[data-composition-id="story-1"]');
         const q = (s) => root.querySelector(s);
-        tl.from(q('.s1-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
-        tl.from(q('.s1-tag'), { x: -30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.25);
-        tl.from(q('.s1-h-bold:first-of-type'), { y: 40, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.35);
-        tl.from(q('.s1-h-italic'), { x: -30, opacity: 0, duration: 0.5, ease: 'back.out(1.6)' }, 0.55);
-        tl.from(q('.s1-h-bold:last-of-type'), { y: 40, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.7);
-        tl.from(q('.s1-path'), { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.9);
-        tl.from(q('.s1-metric-label'), { opacity: 0, duration: 0.4 }, 1.05);
-        tl.fromTo(q('.s1-metric'), { scale: 0.5, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.7, ease: 'back.out(1.8)' }, 1.1);
-        tl.from(q('.s1-metric-tag'), { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.45);
-        tl.from(q('.s1-callout'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 1.55);
-        tl.from(q('.s1-foot'), { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' }, 1.9);
-        tl.fromTo(q('.s1-ghost'), { opacity: 0, y: 30 }, { opacity: 0.12, y: 0, duration: 1.5, ease: 'power1.out' }, 0);
-        tl.to(q('.s1-ghost'), { y: -20, duration: 8, ease: 'sine.inOut' }, 1);
-        tl.to(q('.s1-dot'), { scale: 1.4, duration: 0.8, ease: 'sine.inOut', yoyo: true, repeat: 2 }, 2);
+        const qa = (s) => Array.from(root.querySelectorAll(s));
+
+        // Split headlines into per-character spans for stagger
+        qa('[data-split]').forEach(el => {
+          const txt = el.textContent;
+          el.textContent = '';
+          for (const ch of txt) {
+            const s = document.createElement('span');
+            s.className = 'chr';
+            s.textContent = ch === ' ' ? '\u00A0' : ch;
+            el.appendChild(s);
+          }
+        });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // 1. Wipe reveal (electric blue)
+        tl.to('.s1-wipe', { scaleX: 0, duration: 0.52, ease: 'power4.inOut' }, 0);
+        tl.set('.s1-wipe', { display: 'none' }, 0.52);
+
+        // 2. Meta top — slide in from edges
+        tl.from('.s1-meta-l', { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.3);
+        tl.from('.s1-meta-r', { x: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.35);
+
+        // 3. Vermillion streak — grow from 0 width
+        tl.fromTo('.s1-vermillion-streak', { scaleX: 0, transformOrigin: 'right center' }, { scaleX: 1, duration: 0.6, ease: 'expo.out' }, 0.2);
+
+        // 4. Tag — rotate + slide in
+        tl.from('.s1-tag', { x: -30, rotation: -6, opacity: 0, duration: 0.5, ease: 'back.out(2)' }, 0.45);
+
+        // 5. Headline letters with stagger
+        tl.from('.s1-h-bold .chr', { y: 80, opacity: 0, rotation: 4, duration: 0.5, ease: 'back.out(2)', stagger: 0.025 }, 0.55);
+        tl.from('.s1-h-italic .chr', { x: -20, opacity: 0, duration: 0.35, ease: 'power2.out', stagger: 0.02 }, 0.85);
+        tl.from('.s1-h-bold2 .chr', { y: 80, opacity: 0, scale: 1.4, duration: 0.5, ease: 'back.out(2.4)', stagger: 0.03 }, 1.0);
+
+        // 6. Path — slide from left
+        tl.from('.s1-path', { x: -30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.25);
+
+        // 7. Metric label
+        tl.from('.s1-metric-label', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.4);
+
+        // 8. Metric number count-up (0 → 4.7) with scale pop
+        const num = q('#s1-num');
+        const counter = { val: 0.0 };
+        tl.fromTo(num, { scale: 0.3, opacity: 0 }, { scale: 1.12, opacity: 1, duration: 0.5, ease: 'back.out(2.4)' }, 1.5);
+        tl.to(counter, {
+          val: 4.7,
+          duration: 0.9,
+          ease: 'power3.out',
+          onUpdate: () => { num.textContent = counter.val.toFixed(1); }
+        }, 1.5);
+        tl.to(num, { scale: 1, duration: 0.35, ease: 'power2.out' }, 2.0);
+
+        // 9. Metric tag
+        tl.from('.s1-metric-tag', { x: 30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.9);
+
+        // 10. Callout stripe grows before text
+        tl.fromTo('.s1-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.1);
+        tl.from('.s1-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.15);
+        tl.from('.s1-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.35);
+        tl.from('.s1-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.45);
+
+        // 11. Foot dots stagger pop
+        tl.from('.s1-dots .s1-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.6);
+        tl.from('.s1-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.7);
+
+        // Ambient / continuous
+        // BG patterns
+        tl.fromTo('.s1-bg-halftone', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out', overwrite: 'auto' }, 0.25);
+        tl.to('.s1-bg-halftone', { x: -34, y: -34, duration: 14, ease: 'none' }, 0);
+        tl.fromTo('.s1-bg-columns', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out', overwrite: 'auto' }, 0.3);
+        tl.to('.s1-bg-columns', { x: 90, duration: 14, ease: 'none' }, 0);
+
+        tl.fromTo('.s1-ghost', { opacity: 0, y: 30, scale: 0.95 }, { opacity: 0.12, y: 0, scale: 1, duration: 1.2, ease: 'power2.out' }, 0.3);
+        tl.to('.s1-ghost', { y: -20, rotation: -1, duration: 7, ease: 'sine.inOut' }, 1.2);
+        tl.to('.s1-dot', { scale: 1.4, duration: 0.7, ease: 'sine.inOut', yoyo: true, repeat: 4 }, 3.0);
+        tl.to('.s1-d-on', { scale: 1.2, duration: 0.9, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 3.5);
+        tl.to('.s1-vermillion-streak', { scaleX: 1.1, duration: 2.5, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+
+        tl.to('[data-composition-id="story-1"]', { opacity: 0, duration: 0.18, ease: 'power2.in' }, 9.82);
+        tl.set('[data-composition-id="story-1"]', { opacity: 0, visibility: 'hidden' }, 10.0);
+
         window.__timelines['story-1'] = tl;
       })();
     </script>

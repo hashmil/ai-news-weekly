@@ -2,26 +2,31 @@
   <div data-composition-id="story-4" data-width="1080" data-height="1920" data-start="0" data-duration="10">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <div class="s4-wipe"></div>
+
     <div class="s4-root">
+      <div class="s4-bg-halftone"></div>
+      <div class="s4-bg-contours"></div>
       <div class="s4-ghost">04</div>
       <div class="s4-forest-stripe"></div>
+      <div class="s4-electric-dot"></div>
 
       <div class="s4-meta-top">
-        <span>ENTRY 04 OF 05</span>
-        <span>cnbc.com</span>
+        <span class="s4-meta-l">ENTRY 04 OF 05</span>
+        <span class="s4-meta-r">cnbc.com</span>
       </div>
 
       <div class="s4-body">
-        <div class="s4-tag">INFRASTRUCTURE · COMPUTE</div>
+        <div class="s4-tag">INFRASTRUCTURE &middot; COMPUTE</div>
         <h1 class="s4-headline">
-          <span class="s4-h-bold">ANTHROPIC BUYS</span>
-          <span class="s4-h-italic">a country's worth of</span>
-          <span class="s4-h-bold2">POWER.</span>
+          <span class="s4-h-bold" data-split>ANTHROPIC BUYS</span>
+          <span class="s4-h-italic" data-split>a country's worth of</span>
+          <span class="s4-h-bold2" data-split>POWER.</span>
         </h1>
-        <div class="s4-path">broadcom + google tpus · 2026-04-07</div>
+        <div class="s4-path">broadcom + google tpus &middot; 2026-04-07</div>
 
         <div class="s4-metric-row">
-          <div class="s4-metric-num" id="s4-num">3.5</div>
+          <div class="s4-metric-num" id="s4-num">0.0</div>
           <div class="s4-metric-side">
             <div class="s4-metric-unit">GIGAWATTS</div>
             <div class="s4-metric-tag"><span class="s4-dot"></span>via Google TPUs</div>
@@ -29,14 +34,17 @@
         </div>
 
         <div class="s4-callout">
+          <div class="s4-callout-stripe"></div>
           <div class="s4-callout-label">WHAT IT MEANS</div>
           <div class="s4-callout-body">The A.I. race is now an energy race. Expect more data centers next to your power grid.</div>
         </div>
       </div>
 
       <div class="s4-foot">
-        <div class="s4-dots"><span></span><span></span><span></span><span class="on"></span><span></span></div>
-        <div class="s4-counter">04 / 05</div>
+        <div class="s4-dots">
+          <span class="s4-d"></span><span class="s4-d"></span><span class="s4-d"></span><span class="s4-d s4-d-on"></span><span class="s4-d"></span>
+        </div>
+        <div class="s4-counter">04 &divide; 05</div>
       </div>
     </div>
 
@@ -49,6 +57,13 @@
         overflow: hidden;
         color: #1A1A1A;
       }
+      [data-composition-id="story-4"] .s4-wipe {
+        position: absolute;
+        inset: 0;
+        background: #FF4A1C;
+        z-index: 999;
+        transform-origin: left center;
+      }
       [data-composition-id="story-4"] .s4-root {
         position: relative;
         width: 100%;
@@ -57,6 +72,21 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+      }
+      [data-composition-id="story-4"] .s4-bg-halftone {
+        position: absolute;
+        left: -60px; top: -60px; right: -60px; bottom: -60px;
+        pointer-events: none;
+        background-image: radial-gradient(circle, rgba(26,26,26,0.08) 2px, transparent 2.5px);
+        background-size: 34px 34px;
+        z-index: 0;
+      }
+      [data-composition-id="story-4"] .s4-bg-contours {
+        position: absolute;
+        left: -120px; top: -120px; right: -120px; bottom: -120px;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(0deg, rgba(15,77,58,0.07) 0, rgba(15,77,58,0.07) 1.5px, transparent 1.5px, transparent 48px);
+        z-index: 0;
       }
       [data-composition-id="story-4"] .s4-ghost {
         position: absolute;
@@ -74,12 +104,22 @@
       [data-composition-id="story-4"] .s4-forest-stripe {
         position: absolute;
         left: 0;
-        top: 50%;
+        top: 248px;
         width: 220px;
         height: 8px;
         background: #0F4D3A;
+        opacity: 0.65;
+        transform-origin: left center;
+      }
+      [data-composition-id="story-4"] .s4-electric-dot {
+        position: absolute;
+        right: 120px;
+        top: 232px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: #2B4BFF;
         opacity: 0.55;
-        transform: translateY(-50%);
       }
       [data-composition-id="story-4"] .s4-meta-top {
         display: flex;
@@ -108,6 +148,7 @@
         padding: 10px 22px;
         border: 1.5px solid #1A1A1A;
         border-radius: 999px;
+        transform-origin: left center;
       }
       [data-composition-id="story-4"] .s4-headline {
         font-family: 'Space Grotesk', sans-serif;
@@ -117,7 +158,9 @@
         letter-spacing: -0.04em;
         margin: 0;
       }
-      [data-composition-id="story-4"] .s4-h-bold { display: block; color: #1A1A1A; }
+      [data-composition-id="story-4"] .s4-h-bold,
+      [data-composition-id="story-4"] .s4-h-bold2 { display: block; color: #1A1A1A; }
+      [data-composition-id="story-4"] .s4-h-bold2 { color: #2B4BFF; }
       [data-composition-id="story-4"] .s4-h-italic {
         display: block;
         font-family: 'Inter Tight', sans-serif;
@@ -127,7 +170,10 @@
         font-size: 82px;
         margin: 6px 0;
       }
-      [data-composition-id="story-4"] .s4-h-bold2 { display: block; color: #2B4BFF; }
+      [data-composition-id="story-4"] .chr {
+        display: inline-block;
+        transform-origin: 50% 100%;
+      }
       [data-composition-id="story-4"] .s4-path {
         font-family: 'JetBrains Mono', monospace;
         font-size: 22px;
@@ -174,10 +220,17 @@
         background: #0F4D3A;
       }
       [data-composition-id="story-4"] .s4-callout {
+        position: relative;
         background: rgba(43,75,255,0.12);
-        border-left: 6px solid #2B4BFF;
-        padding: 24px 30px;
+        padding: 24px 30px 24px 36px;
         max-width: 920px;
+      }
+      [data-composition-id="story-4"] .s4-callout-stripe {
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 6px;
+        background: #2B4BFF;
+        transform-origin: top center;
       }
       [data-composition-id="story-4"] .s4-callout-label {
         font-family: 'JetBrains Mono', monospace;
@@ -205,15 +258,13 @@
         letter-spacing: 0.1em;
       }
       [data-composition-id="story-4"] .s4-dots { display: flex; gap: 14px; }
-      [data-composition-id="story-4"] .s4-dots span {
+      [data-composition-id="story-4"] .s4-d {
         width: 12px; height: 12px; border-radius: 50%;
         background: #1A1A1A;
         opacity: 0.25;
+        display: inline-block;
       }
-      [data-composition-id="story-4"] .s4-dots span.on {
-        background: #2B4BFF;
-        opacity: 1;
-      }
+      [data-composition-id="story-4"] .s4-d-on { background: #2B4BFF; opacity: 1; }
       [data-composition-id="story-4"] .s4-counter { opacity: 0.7; }
     </style>
 
@@ -221,31 +272,79 @@
     <script>
       window.__timelines = window.__timelines || {};
       (function () {
-        const tl = gsap.timeline({ paused: true });
         const root = document.querySelector('[data-composition-id="story-4"]');
         const q = (s) => root.querySelector(s);
-        tl.from(q('.s4-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
-        tl.from(q('.s4-tag'), { x: -30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.25);
-        tl.from(q('.s4-h-bold'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.35);
-        tl.from(q('.s4-h-italic'), { y: 30, opacity: 0, duration: 0.55, ease: 'back.out(1.4)' }, 0.55);
-        tl.from(q('.s4-h-bold2'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.7);
-        tl.from(q('.s4-path'), { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.9);
+        const qa = (s) => Array.from(root.querySelectorAll(s));
+
+        qa('[data-split]').forEach(el => {
+          const txt = el.textContent;
+          el.textContent = '';
+          for (const ch of txt) {
+            const s = document.createElement('span');
+            s.className = 'chr';
+            s.textContent = ch === ' ' ? '\u00A0' : ch;
+            el.appendChild(s);
+          }
+        });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Wipe (vermillion, from left)
+        tl.to('.s4-wipe', { scaleX: 0, duration: 0.52, ease: 'power4.inOut' }, 0);
+        tl.set('.s4-wipe', { display: 'none' }, 0.52);
+
+        tl.from('.s4-meta-l', { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.32);
+        tl.from('.s4-meta-r', { x: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.38);
+        tl.fromTo('.s4-forest-stripe', { scaleX: 0 }, { scaleX: 1, duration: 0.6, ease: 'expo.out' }, 0.25);
+        tl.fromTo('.s4-electric-dot', { scale: 0, opacity: 0 }, { scale: 1, opacity: 0.5, duration: 0.55, ease: 'back.out(2.4)' }, 0.4);
+
+        tl.from('.s4-tag', { x: -30, rotation: -6, opacity: 0, duration: 0.5, ease: 'back.out(2)' }, 0.45);
+
+        tl.from('.s4-h-bold .chr', { y: 70, rotation: 3, opacity: 0, duration: 0.5, ease: 'back.out(2)', stagger: 0.02 }, 0.55);
+        tl.from('.s4-h-italic .chr', { y: 30, opacity: 0, duration: 0.4, ease: 'power3.out', stagger: 0.015 }, 0.85);
+        tl.from('.s4-h-bold2 .chr', { y: 80, scale: 1.4, opacity: 0, duration: 0.5, ease: 'back.out(2.4)', stagger: 0.04 }, 1.1);
+
+        tl.from('.s4-path', { x: -30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.35);
+
+        // Big number count-up
         const num = q('#s4-num');
         const counter = { val: 0 };
-        tl.fromTo(num, { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5, ease: 'power3.out' }, 1.05);
+        tl.fromTo(num, { scale: 0.4, opacity: 0, rotation: -4 }, { scale: 1.1, opacity: 1, rotation: 0, duration: 0.55, ease: 'back.out(2.4)' }, 1.5);
         tl.to(counter, {
           val: 3.5,
-          duration: 1.2,
-          ease: 'power2.out',
+          duration: 1.1,
+          ease: 'power3.out',
           onUpdate: () => { num.textContent = counter.val.toFixed(1); }
-        }, 1.05);
-        tl.from(q('.s4-metric-unit'), { x: -20, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.3);
-        tl.from(q('.s4-metric-tag'), { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.45);
-        tl.from(q('.s4-callout'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 1.6);
-        tl.from(q('.s4-foot'), { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' }, 1.9);
-        tl.fromTo(q('.s4-ghost'), { opacity: 0, x: 40 }, { opacity: 0.1, x: 0, duration: 1.6, ease: 'power1.out' }, 0);
-        tl.to(q('.s4-ghost'), { x: -20, duration: 8, ease: 'sine.inOut' }, 1);
-        tl.fromTo(q('.s4-forest-stripe'), { width: 0, opacity: 0 }, { width: 220, opacity: 0.55, duration: 0.6, ease: 'power3.out' }, 0.2);
+        }, 1.5);
+        tl.to(num, { scale: 1, duration: 0.4, ease: 'power2.out' }, 2.05);
+
+        tl.from('.s4-metric-unit', { x: -20, opacity: 0, duration: 0.45, ease: 'back.out(2)' }, 1.8);
+        tl.from('.s4-metric-tag', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.95);
+
+        tl.fromTo('.s4-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.2);
+        tl.from('.s4-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.25);
+        tl.from('.s4-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.45);
+        tl.from('.s4-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.55);
+
+        tl.from('.s4-dots .s4-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.7);
+        tl.from('.s4-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.8);
+
+        // BG patterns
+        tl.fromTo('.s4-bg-halftone', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out', overwrite: 'auto' }, 0.25);
+        tl.to('.s4-bg-halftone', { x: 34, y: -34, duration: 14, ease: 'none' }, 0);
+        tl.fromTo('.s4-bg-contours', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out', overwrite: 'auto' }, 0.3);
+        tl.to('.s4-bg-contours', { y: 48, duration: 12, ease: 'none' }, 0);
+
+        tl.fromTo('.s4-ghost', { opacity: 0, x: 40, scale: 0.95 }, { opacity: 0.1, x: 0, scale: 1, duration: 1.4, ease: 'power2.out' }, 0.3);
+        tl.to('.s4-ghost', { x: -25, rotation: 1, duration: 7, ease: 'sine.inOut' }, 1.3);
+        tl.to('.s4-forest-stripe', { scaleX: 1.3, duration: 2.5, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        tl.to('.s4-electric-dot', { scale: 1.15, duration: 1.6, ease: 'sine.inOut', yoyo: true, repeat: 2 }, 1.5);
+        tl.to('.s4-d-on', { scale: 1.3, duration: 0.8, ease: 'sine.inOut', yoyo: true, repeat: 4 }, 3.2);
+        tl.to('.s4-dot', { scale: 1.35, duration: 0.8, ease: 'sine.inOut', yoyo: true, repeat: 3 }, 3.5);
+
+        tl.to('[data-composition-id="story-4"]', { opacity: 0, duration: 0.18, ease: 'power2.in' }, 9.82);
+        tl.set('[data-composition-id="story-4"]', { opacity: 0, visibility: 'hidden' }, 10.0);
+
         window.__timelines['story-4'] = tl;
       })();
     </script>

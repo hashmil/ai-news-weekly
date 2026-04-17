@@ -1,31 +1,36 @@
 <template id="cover-template">
   <div data-composition-id="cover" data-width="1080" data-height="1920" data-start="0" data-duration="4">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <div class="cover-intro-panel"></div>
 
     <div class="cover-root">
       <div class="cover-grain"></div>
+      <div class="cover-bg-halftone"></div>
+      <div class="cover-bg-rings"></div>
       <div class="cover-ink-circle"></div>
       <div class="cover-saffron-dot"></div>
+      <div class="cover-saffron-bar"></div>
 
       <div class="cover-meta cover-meta-top">
-        <span class="cover-issue">ISSUE N°17 &nbsp;·&nbsp; APR 17 2026</span>
+        <span class="cover-issue">ISSUE N°17 &nbsp;&middot;&nbsp; APR 17 2026</span>
         <span class="cover-source">AI WEEKLY</span>
       </div>
 
       <div class="cover-title-block">
-        <div class="cover-kicker">FIVE STORIES</div>
+        <div class="cover-kicker" data-split-words>FIVE STORIES</div>
         <h1 class="cover-title">
-          <span class="cover-t1">THIS WEEK</span>
-          <span class="cover-t2">in</span>
-          <span class="cover-t3">A.I.</span>
+          <span class="cover-t1" data-split-words>THIS WEEK</span>
+          <span class="cover-t-row">
+            <span class="cover-t2">in</span>
+            <span class="cover-t3">A.I.</span>
+          </span>
         </h1>
         <div class="cover-sub">A minute of signal, edited like a magazine.</div>
       </div>
 
       <div class="cover-foot">
-        <span class="cover-swipe">→ SWIPE</span>
+        <span class="cover-cue">SOUND ON &#x2022; 60s</span>
       </div>
     </div>
 
@@ -38,6 +43,13 @@
         overflow: hidden;
         font-family: 'Space Grotesk', sans-serif;
         color: #F5EDE0;
+      }
+      [data-composition-id="cover"] .cover-intro-panel {
+        position: absolute;
+        inset: 0;
+        background: #1A1A1A;
+        z-index: 999;
+        transform-origin: center center;
       }
       [data-composition-id="cover"] .cover-root {
         position: relative;
@@ -54,6 +66,33 @@
         inset: 0;
         background: radial-gradient(ellipse at 30% 80%, rgba(26,26,26,0.18), rgba(26,26,26,0) 55%);
         pointer-events: none;
+        z-index: 0;
+      }
+      [data-composition-id="cover"] .cover-bg-halftone {
+        position: absolute;
+        left: -80px; top: -80px; right: -80px; bottom: -80px;
+        pointer-events: none;
+        background-image: radial-gradient(circle, rgba(26,26,26,0.16) 2.5px, transparent 3px);
+        background-size: 40px 40px;
+        z-index: 0;
+        opacity: 0.95;
+      }
+      [data-composition-id="cover"] .cover-bg-rings {
+        position: absolute;
+        left: 50%; top: 50%;
+        width: 1800px;
+        height: 1800px;
+        margin-left: -900px;
+        margin-top: -900px;
+        pointer-events: none;
+        border-radius: 50%;
+        border: 2px solid rgba(26,26,26,0.18);
+        box-shadow:
+          inset 0 0 0 2px transparent,
+          0 0 0 160px rgba(255,201,60,0),
+          0 0 0 240px rgba(26,26,26,0.1),
+          0 0 0 420px rgba(26,26,26,0.08);
+        z-index: 0;
       }
       [data-composition-id="cover"] .cover-ink-circle {
         position: absolute;
@@ -73,6 +112,15 @@
         height: 120px;
         border-radius: 50%;
         background: #FFC93C;
+      }
+      [data-composition-id="cover"] .cover-saffron-bar {
+        position: absolute;
+        right: 80px;
+        top: 820px;
+        width: 260px;
+        height: 10px;
+        background: #FFC93C;
+        transform-origin: right center;
       }
       [data-composition-id="cover"] .cover-meta {
         display: flex;
@@ -98,14 +146,22 @@
       [data-composition-id="cover"] .cover-title {
         font-family: 'Space Grotesk', sans-serif;
         font-weight: 700;
-        font-size: 220px;
-        line-height: 0.92;
+        font-size: 180px;
+        line-height: 0.9;
         letter-spacing: -0.04em;
         margin: 0;
       }
       [data-composition-id="cover"] .cover-t1 {
         display: block;
         color: #F5EDE0;
+        white-space: nowrap;
+      }
+      [data-composition-id="cover"] .cover-t-row {
+        display: flex;
+        align-items: baseline;
+        gap: 26px;
+        margin-top: 4px;
+        white-space: nowrap;
       }
       [data-composition-id="cover"] .cover-t2 {
         display: inline-block;
@@ -113,13 +169,22 @@
         font-weight: 300;
         font-style: italic;
         color: #FFC93C;
-        font-size: 160px;
-        margin-right: 30px;
-        transform: translateY(-10px);
+        font-size: 140px;
+        line-height: 1;
       }
       [data-composition-id="cover"] .cover-t3 {
         display: inline-block;
         color: #F5EDE0;
+        font-size: 200px;
+        line-height: 1;
+      }
+      [data-composition-id="cover"] .chr {
+        display: inline-block;
+        transform-origin: 50% 100%;
+      }
+      [data-composition-id="cover"] .word {
+        display: inline-block;
+        transform-origin: 50% 100%;
       }
       [data-composition-id="cover"] .cover-sub {
         font-family: 'Inter Tight', sans-serif;
@@ -146,19 +211,71 @@
     <script>
       window.__timelines = window.__timelines || {};
       (function () {
-        const tl = gsap.timeline({ paused: true });
         const root = document.querySelector('[data-composition-id="cover"]');
-        const q = (s) => root.querySelector(s);
-        tl.from(q('.cover-meta-top'), { y: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.15);
-        tl.from(q('.cover-kicker'), { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 0.3);
-        tl.from(q('.cover-t1'), { y: 80, opacity: 0, duration: 0.7, ease: 'expo.out' }, 0.4);
-        tl.from(q('.cover-t2'), { y: 60, opacity: 0, rotate: -3, duration: 0.6, ease: 'back.out(1.6)' }, 0.6);
-        tl.from(q('.cover-t3'), { y: 80, opacity: 0, duration: 0.7, ease: 'expo.out' }, 0.75);
-        tl.from(q('.cover-sub'), { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 0.95);
-        tl.from(q('.cover-foot'), { x: 40, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.2);
-        tl.fromTo(q('.cover-ink-circle'), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 0.9, duration: 1.0, ease: 'power2.out' }, 0.1);
-        tl.fromTo(q('.cover-saffron-dot'), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: 'back.out(2)' }, 0.5);
-        tl.to(q('.cover-saffron-dot'), { scale: 1.1, duration: 2.0, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        const qa = (s) => Array.from(root.querySelectorAll(s));
+
+        // Word-level split (spaces preserved as real spaces → natural wrap between words)
+        qa('[data-split-words]').forEach(el => {
+          const txt = el.textContent;
+          el.textContent = '';
+          const parts = txt.split(/(\s+)/);
+          for (const p of parts) {
+            if (!p) continue;
+            if (/^\s+$/.test(p)) {
+              el.appendChild(document.createTextNode(p));
+            } else {
+              const s = document.createElement('span');
+              s.className = 'word';
+              s.textContent = p;
+              el.appendChild(s);
+            }
+          }
+        });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Ink panel slide-off (left), reveals vermillion cover
+        tl.to('.cover-intro-panel', { scaleY: 0, transformOrigin: 'top center', duration: 0.55, ease: 'power4.inOut' }, 0);
+        tl.set('.cover-intro-panel', { display: 'none' }, 0.55);
+
+        // Meta
+        tl.from('.cover-issue', { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.4);
+        tl.from('.cover-source', { x: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.45);
+
+        // Kicker word stagger
+        tl.from('.cover-kicker .word', { y: 30, opacity: 0, duration: 0.45, ease: 'back.out(2)', stagger: 0.08 }, 0.55);
+
+        // Title words — slam up with overshoot
+        tl.from('.cover-t1 .word', { y: 110, scale: 1.25, opacity: 0, duration: 0.65, ease: 'back.out(2.2)', stagger: 0.1 }, 0.72);
+
+        // "in" italic slides from left
+        tl.from('.cover-t2', { x: -40, rotation: -4, opacity: 0, duration: 0.5, ease: 'back.out(1.8)' }, 1.05);
+        // "A.I." punches up
+        tl.from('.cover-t3', { y: 80, scale: 1.3, opacity: 0, duration: 0.55, ease: 'back.out(2.4)' }, 1.15);
+
+        tl.from('.cover-sub', { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 1.4);
+        tl.from('.cover-foot', { x: 40, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.6);
+
+        // Decoratives
+        tl.fromTo('.cover-ink-circle', { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 0.9, duration: 1.0, ease: 'power2.out' }, 0.4);
+        tl.fromTo('.cover-saffron-dot', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.55, ease: 'back.out(2.4)' }, 0.6);
+        tl.fromTo('.cover-saffron-bar', { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: 'expo.out' }, 0.7);
+        tl.to('.cover-saffron-dot', { scale: 1.12, duration: 1.3, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.8);
+        tl.to('.cover-saffron-bar', { scaleX: 1.15, duration: 1.8, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 2.0);
+        tl.to('.cover-ink-circle', { scale: 1.04, duration: 2.2, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+
+        // BG halftone drift + subtle fade-in
+        tl.fromTo('.cover-bg-halftone', { opacity: 0 }, { opacity: 0.95, duration: 0.8, ease: 'power2.out' }, 0.2);
+        tl.to('.cover-bg-halftone', { x: -40, y: -40, duration: 12, ease: 'none' }, 0);
+
+        // BG rings — pulse/scale
+        tl.fromTo('.cover-bg-rings', { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 1.4, ease: 'power2.out' }, 0.3);
+        tl.to('.cover-bg-rings', { scale: 1.08, duration: 2.0, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.8);
+
+        // Hard hide root at scene end so outgoing iframe doesn't bleed into next
+        tl.to('[data-composition-id="cover"]', { opacity: 0, duration: 0.18, ease: 'power2.in' }, 3.82);
+        tl.set('[data-composition-id="cover"]', { opacity: 0, visibility: 'hidden' }, 4.0);
+
         window.__timelines['cover'] = tl;
       })();
     </script>

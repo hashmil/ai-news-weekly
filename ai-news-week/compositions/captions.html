@@ -17,7 +17,7 @@
         position: absolute;
         left: 0;
         right: 0;
-        bottom: 380px;
+        bottom: 300px;
         width: 100%;
         text-align: center;
         z-index: 100;
@@ -32,20 +32,30 @@
         visibility: hidden;
         font-family: 'JetBrains Mono', monospace;
         font-weight: 800;
-        font-size: 62px;
-        line-height: 1.18;
+        font-size: 58px;
+        line-height: 1.15;
         letter-spacing: -0.01em;
         color: #F5EDE0;
-        padding: 0 30px;
+        padding: 0 20px;
         text-transform: uppercase;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0 14px;
+      }
+      [data-composition-id="captions"] .cap-word {
+        display: inline-block;
+        opacity: 0.42;
+        transform-origin: center center;
+        transition: none;
         text-shadow:
           4px 4px 0 #1A1A1A,
           -2px -2px 0 #1A1A1A,
           2px -2px 0 #1A1A1A,
           -2px 2px 0 #1A1A1A,
-          0 0 18px rgba(26,26,26,0.55);
+          0 0 22px rgba(26,26,26,0.62);
       }
-      [data-composition-id="captions"] .cap-group .hl {
+      [data-composition-id="captions"] .cap-word.hl {
         color: #FFC93C;
       }
     </style>
@@ -55,43 +65,45 @@
       window.__timelines = window.__timelines || {};
       (function () {
         const GROUPS = [
-          { text: "This week in AI,", start: 0.05, end: 1.10, hl: "AI" },
-          { text: "five stories that actually", start: 1.28, end: 3.98, hl: "five" },
-          { text: "matter.", start: 4.00, end: 4.50, hl: "matter" },
-          { text: "Anthropic just dropped Claude", start: 4.07, end: 5.97, hl: "Anthropic" },
-          { text: "Opus 4.7, sharper coding,", start: 6.06, end: 7.95, hl: "4.7" },
-          { text: "better vision, and a", start: 7.95, end: 8.89 },
-          { text: "big bump on benchmarks,", start: 8.89, end: 10.30, hl: "bump" },
-          { text: "their most capable Opus yet.", start: 10.35, end: 11.96, hl: "capable" },
-          { text: "OpenAI gave Codex", start: 12.01, end: 13.84, hl: "Codex" },
-          { text: "the keys to your computer.", start: 13.84, end: 16.92, hl: "computer" },
-          { text: "It can now see", start: 16.97, end: 17.51 },
-          { text: "your screen, move your", start: 17.51, end: 18.68, hl: "screen" },
-          { text: "cursor, and click and", start: 18.68, end: 19.69, hl: "click" },
-          { text: "type on your behalf.", start: 19.69, end: 20.84, hl: "behalf" },
-          { text: "The assistant became an operator.", start: 20.89, end: 22.72, hl: "operator" },
-          { text: "Visa just gave AI", start: 22.77, end: 24.67, hl: "Visa" },
-          { text: "agents a wallet", start: 24.68, end: 26.71, hl: "wallet" },
-          { text: "that can make purchases", start: 26.75, end: 27.62, hl: "purchases" },
-          { text: "on your behalf autonomously.", start: 27.62, end: 29.43, hl: "autonomously" },
-          { text: "The checkout is no", start: 29.49, end: 30.38 },
-          { text: "longer yours alone.", start: 30.38, end: 31.62, hl: "alone" },
-          { text: "Anthropic secured 3.5 gigawatts", start: 31.67, end: 36.12, hl: "3.5" },
-          { text: "of Google computing power,", start: 36.24, end: 37.68, hl: "Google" },
-          { text: "enough electricity to run", start: 37.73, end: 39.00 },
-          { text: "a small country.", start: 39.00, end: 39.80, hl: "country" },
-          { text: "That is how much", start: 39.85, end: 40.48 },
-          { text: "juice the next generation", start: 40.48, end: 42.63, hl: "juice" },
-          { text: "of AI needs.", start: 42.63, end: 43.95, hl: "needs" },
-          { text: "Google Gemini now answers", start: 44.05, end: 45.40, hl: "Gemini" },
-          { text: "questions with interactive 3D", start: 45.40, end: 47.20, hl: "3D" },
-          { text: "models you can rotate", start: 47.29, end: 48.49 },
-          { text: "and poke.", start: 48.49, end: 49.09, hl: "poke" },
-          { text: "AI responses just got", start: 49.33, end: 50.85 },
-          { text: "a lot more visual.", start: 50.85, end: 52.24, hl: "visual" },
-          { text: "That is the week", start: 52.43, end: 54.07 },
-          { text: "five stories, one minute", start: 54.07, end: 56.41, hl: "one minute" },
-          { text: "follow for more.", start: 56.41, end: 57.38, hl: "follow" }
+          { start: 0.04, end: 1.39, words: [{t:"This",s:0.04,e:0.58}, {t:"week",s:0.58,e:1.15}, {t:"in",s:1.15,e:1.31}] },
+          { start: 1.7, end: 2.94, hl: [2], words: [{t:"AI,",s:1.7,e:1.9}, {t:"five",s:1.9,e:2.14}, {t:"stories",s:2.2,e:2.68}, {t:"that",s:2.68,e:2.96}] },
+          { start: 2.96, end: 4.01, hl: [1], words: [{t:"actually",s:2.96,e:3.44}, {t:"matter.",s:3.44,e:4.03}] },
+          { start: 4.03, end: 6.26, hl: [0], words: [{t:"Anthropic",s:4.03,e:4.71}, {t:"just",s:4.82,e:5.13}, {t:"dropped",s:5.13,e:5.73}, {t:"Claude",s:5.83,e:6.28}] },
+          { start: 6.28, end: 7.51, hl: [0,1], words: [{t:"Opus",s:6.28,e:6.62}, {t:"4.7.",s:6.62,e:7.5}] },
+          { start: 7.53, end: 8.88, words: [{t:"Sharper",s:7.53,e:7.97}, {t:"coding,",s:8.07,e:8.6}, {t:"better",s:8.6,e:8.8}] },
+          { start: 9.33, end: 10.06, words: [{t:"vision",s:9.33,e:9.5}, {t:"and",s:9.5,e:9.74}, {t:"a",s:9.74,e:9.82}, {t:"big",s:9.82,e:10.02}] },
+          { start: 10.08, end: 11.73, hl: [2], words: [{t:"bump",s:10.08,e:10.4}, {t:"on",s:10.4,e:10.62}, {t:"benchmarks.",s:10.62,e:11.72}] },
+          { start: 11.75, end: 14.03, hl: [3], words: [{t:"Their",s:11.75,e:12.16}, {t:"most",s:12.16,e:12.43}, {t:"capable",s:12.53,e:13}, {t:"Opus",s:13.29,e:13.46}, {t:"yet.",s:13.55,e:14.02}] },
+          { start: 14.05, end: 15.41, hl: [2], words: [{t:"OpenAI",s:14.05,e:14.47}, {t:"gave",s:14.47,e:14.73}, {t:"Codex",s:14.84,e:15.21}, {t:"the",s:15.21,e:15.33}] },
+          { start: 15.7, end: 17.12, words: [{t:"keys",s:15.7,e:15.75}, {t:"to",s:15.85,e:15.9}, {t:"your",s:15.9,e:16.16}, {t:"computer.",s:16.22,e:17.1}] },
+          { start: 17.14, end: 17.78, words: [{t:"It",s:17.14,e:17.23}, {t:"can",s:17.23,e:17.42}, {t:"now",s:17.42,e:17.57}, {t:"see",s:17.67,e:17.8}] },
+          { start: 17.8, end: 19.32, words: [{t:"your",s:17.8,e:18.06}, {t:"screen,",s:18.06,e:18.62}, {t:"move",s:18.93,e:18.98}, {t:"your",s:18.98,e:19.34}] },
+          { start: 19.34, end: 20.7, hl: [0], words: [{t:"cursor",s:19.34,e:19.87}, {t:"and",s:19.91,e:20.11}, {t:"click",s:20.11,e:20.49}, {t:"and",s:20.49,e:20.72}] },
+          { start: 20.72, end: 21.29, words: [{t:"type",s:20.72,e:21.02}, {t:"on",s:21.02,e:21.18}, {t:"your",s:21.18,e:21.21}] },
+          { start: 21.71, end: 22.24, hl: [0], words: [{t:"behalf.",s:21.71,e:22.22}] },
+          { start: 22.26, end: 24.01, hl: [4], words: [{t:"The",s:22.26,e:22.39}, {t:"assistant",s:22.39,e:22.9}, {t:"became",s:22.9,e:23.24}, {t:"an",s:23.24,e:23.35}, {t:"operator.",s:23.35,e:23.96}] },
+          { start: 24.03, end: 25.41, hl: [0], words: [{t:"Visa",s:24.03,e:24.43}, {t:"just",s:24.43,e:24.86}, {t:"gave",s:24.86,e:25.28}, {t:"AI",s:25.28,e:25.33}] },
+          { start: 25.83, end: 27.25, hl: [2], words: [{t:"agents",s:25.83,e:26.14}, {t:"a",s:26.14,e:26.24}, {t:"wallet.",s:26.24,e:27.24}] },
+          { start: 27.27, end: 28.03, words: [{t:"They",s:27.27,e:27.47}, {t:"can",s:27.47,e:27.64}, {t:"now",s:27.64,e:27.71}, {t:"make",s:27.81,e:27.95}] },
+          { start: 28.05, end: 31.04, hl: [4], words: [{t:"purchases",s:28.05,e:28.52}, {t:"on",s:28.52,e:29.07}, {t:"your",s:29.07,e:29.11}, {t:"behalf",s:29.11,e:29.64}, {t:"autonomously.",s:29.67,e:30.96}] },
+          { start: 31.23, end: 32.4, words: [{t:"The",s:31.23,e:31.44}, {t:"checkout",s:31.44,e:32.1}, {t:"is",s:32.1,e:32.26}, {t:"no",s:32.26,e:32.42}] },
+          { start: 32.42, end: 34.03, words: [{t:"longer",s:32.42,e:32.91}, {t:"yours",s:33.03,e:33.32}, {t:"alone.",s:33.32,e:33.98}] },
+          { start: 34.05, end: 36.58, hl: [2], words: [{t:"Anthropic",s:34.05,e:34.69}, {t:"secured",s:34.69,e:35.21}, {t:"3.5",s:35.21,e:35.88}, {t:"gigawatts",s:35.88,e:36.54}] },
+          { start: 36.6, end: 37.55, hl: [1], words: [{t:"of",s:36.6,e:36.77}, {t:"Google",s:36.77,e:37.28}, {t:"computing",s:37.28,e:37.47}] },
+          { start: 38.04, end: 38.49, words: [{t:"power.",s:38.04,e:38.48}] },
+          { start: 38.51, end: 40.03, words: [{t:"Enough",s:38.51,e:38.91}, {t:"electricity",s:38.91,e:39.71}, {t:"to",s:39.71,e:39.79}, {t:"run",s:39.79,e:40.05}] },
+          { start: 40.05, end: 41.05, hl: [2], words: [{t:"a",s:40.05,e:40.31}, {t:"small",s:40.31,e:40.49}, {t:"country.",s:40.49,e:41.04}] },
+          { start: 41.07, end: 41.83, words: [{t:"That",s:41.07,e:41.27}, {t:"is",s:41.27,e:41.39}, {t:"how",s:41.39,e:41.51}, {t:"much",s:41.61,e:41.75}] },
+          { start: 41.86, end: 42.44, words: [{t:"juice",s:41.86,e:42.12}, {t:"the",s:42.12,e:42.3}, {t:"next",s:42.3,e:42.36}] },
+          { start: 42.87, end: 44.05, words: [{t:"generation",s:42.87,e:43.18}, {t:"of",s:43.24,e:43.36}, {t:"AI",s:43.36,e:43.49}, {t:"needs.",s:43.49,e:44.04}] },
+          { start: 44.07, end: 45.42, hl: [1], words: [{t:"Google",s:44.07,e:44.48}, {t:"Gemini",s:44.48,e:44.92}, {t:"now",s:44.92,e:45.14}, {t:"answers",s:45.14,e:45.34}] },
+          { start: 45.87, end: 47.99, hl: [3], words: [{t:"questions",s:45.87,e:46.32}, {t:"with",s:46.35,e:46.64}, {t:"interactive",s:46.65,e:47.57}, {t:"3D",s:47.57,e:47.91}] },
+          { start: 48.15, end: 50.49, hl: [4], words: [{t:"models",s:48.15,e:48.44}, {t:"can",s:48.71,e:48.97}, {t:"rotate",s:48.99,e:49.53}, {t:"and",s:49.53,e:49.76}, {t:"poke.",s:49.8,e:50.48}] },
+          { start: 50.51, end: 51.86, words: [{t:"AI",s:50.51,e:50.68}, {t:"responses",s:50.68,e:51.59}, {t:"just",s:51.59,e:51.78}] },
+          { start: 52.2, end: 54.01, hl: [4], words: [{t:"got",s:52.2,e:52.22}, {t:"a",s:52.31,e:52.39}, {t:"lot",s:52.39,e:52.69}, {t:"more",s:52.69,e:53.09}, {t:"visual.",s:53.09,e:53.93}] },
+          { start: 54.07, end: 55.42, words: [{t:"That",s:54.07,e:54.3}, {t:"is",s:54.32,e:54.47}, {t:"the",s:54.47,e:54.69}, {t:"week,",s:54.69,e:55.16}, {t:"five",s:55.16,e:55.34}] },
+          { start: 55.87, end: 57.09, hl: [0], words: [{t:"stories,",s:55.87,e:56.15}, {t:"one",s:56.15,e:56.39}, {t:"minute.",s:56.39,e:57.08}] },
+          { start: 57.11, end: 58.22, hl: [0], words: [{t:"Follow",s:57.11,e:57.47}, {t:"for",s:57.47,e:57.66}, {t:"more.",s:57.66,e:58.14}] }
         ];
 
         const container = document.getElementById('cap-container');
@@ -99,13 +111,13 @@
           const el = document.createElement('div');
           el.className = 'cap-group';
           el.id = 'cg-' + i;
-          if (g.hl && g.text.includes(g.hl)) {
-            // Split around hl, keep highlight visually distinct
-            const parts = g.text.split(g.hl);
-            el.innerHTML = parts[0] + '<span class="hl">' + g.hl + '</span>' + parts.slice(1).join(g.hl);
-          } else {
-            el.textContent = g.text;
-          }
+          g.words.forEach((w, wi) => {
+            const span = document.createElement('span');
+            span.className = 'cap-word' + (g.hl && g.hl.indexOf(wi) !== -1 ? ' hl' : '');
+            span.id = 'cg-' + i + '-w-' + wi;
+            span.textContent = w.t;
+            el.appendChild(span);
+          });
           container.appendChild(el);
         });
 
@@ -113,19 +125,42 @@
 
         GROUPS.forEach((g, i) => {
           const sel = '#cg-' + i;
-          const fadeIn = 0.14;
-          const fadeOut = 0.10;
-          // Activate: become visible + animate in
-          tl.set(sel, { visibility: 'visible' }, g.start);
+          const duration = Math.max(0.3, g.end - g.start);
+          const fadeIn = 0.18;
+          const fadeOut = Math.min(0.12, duration * 0.25);
+
+          // Pre-emptive show 60ms before word to compensate for whisper drift
+          const showAt = Math.max(0, g.start - 0.06);
+
+          tl.set(sel, { visibility: 'visible' }, showAt);
           tl.fromTo(sel,
-            { opacity: 0, y: 18, scale: 0.96 },
-            { opacity: 1, y: 0, scale: 1, duration: fadeIn, ease: 'power3.out' },
-            g.start
+            { opacity: 0, y: 22, scale: 0.88 },
+            { opacity: 1, y: 0, scale: 1, duration: fadeIn, ease: 'back.out(2.2)' },
+            showAt
           );
-          // Hard out at end
-          const outStart = Math.max(g.start + fadeIn, g.end - fadeOut);
-          tl.to(sel, { opacity: 0, y: -10, duration: fadeOut, ease: 'power2.in' }, outStart);
-          tl.set(sel, { visibility: 'hidden' }, g.end);
+
+          // Per-word pop — each word pops from dim 0.42 to bright 1.0 with slight scale overshoot
+          g.words.forEach((w, wi) => {
+            const wsel = '#cg-' + i + '-w-' + wi;
+            const wStart = Math.max(showAt, w.s - 0.04);
+            tl.fromTo(wsel,
+              { opacity: 0.42, scale: 1 },
+              { opacity: 1, scale: 1.08, duration: 0.12, ease: 'back.out(3)' },
+              wStart
+            );
+            tl.to(wsel,
+              { scale: 1, duration: 0.14, ease: 'power2.out' },
+              wStart + 0.12
+            );
+          });
+
+          // Out
+          const outStart = Math.max(showAt + fadeIn, g.end - fadeOut);
+          tl.to(sel,
+            { opacity: 0, y: -12, scale: 0.98, duration: fadeOut, ease: 'power2.in' },
+            outStart
+          );
+          tl.set(sel, { visibility: 'hidden', opacity: 0 }, g.end);
         });
 
         window.__timelines['captions'] = tl;

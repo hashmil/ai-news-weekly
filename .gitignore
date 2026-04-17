@@ -2,3 +2,5 @@
 .firecrawl/
 node_modules/
 ai-news-week/.hyperframes/
+.env
+.env.*

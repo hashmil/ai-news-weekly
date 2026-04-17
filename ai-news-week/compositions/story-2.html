@@ -2,39 +2,49 @@
   <div data-composition-id="story-2" data-width="1080" data-height="1920" data-start="0" data-duration="10">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <div class="s2-wipe"></div>
+
     <div class="s2-root">
+      <div class="s2-bg-halftone"></div>
+      <div class="s2-bg-diagonal"></div>
       <div class="s2-ghost">02</div>
       <div class="s2-mauve"></div>
+      <div class="s2-saffron-line"></div>
 
       <div class="s2-meta-top">
-        <span>ENTRY 02 OF 05</span>
-        <span>techcrunch.com</span>
+        <span class="s2-meta-l">ENTRY 02 OF 05</span>
+        <span class="s2-meta-r">techcrunch.com</span>
       </div>
 
       <div class="s2-body">
-        <div class="s2-tag">AGENTS · DESKTOP</div>
+        <div class="s2-tag">AGENTS &middot; DESKTOP</div>
         <h1 class="s2-headline">
-          <span class="s2-h-italic">a new</span>
-          <span class="s2-h-bold">CODEX TAKES</span>
-          <span class="s2-h-bold2">THE CURSOR.</span>
+          <span class="s2-h-italic" data-split>a new</span>
+          <span class="s2-h-bold" data-split>CODEX TAKES</span>
+          <span class="s2-h-bold2" data-split>THE CURSOR.</span>
         </h1>
-        <div class="s2-path">openai.com / codex</div>
+        <div class="s2-path">openai.com &middot; codex</div>
 
         <div class="s2-metric-wrap">
           <div class="s2-metric-label">POWERS GRANTED</div>
-          <div class="s2-metric">SEE · MOVE · CLICK</div>
+          <div class="s2-metric">
+            <span class="s2-m-word">SEE</span><span class="s2-m-sep"> &middot; </span><span class="s2-m-word">MOVE</span><span class="s2-m-sep"> &middot; </span><span class="s2-m-word">CLICK</span>
+          </div>
           <div class="s2-metric-tag"><span class="s2-dot"></span>macOS background mode</div>
         </div>
 
         <div class="s2-callout">
+          <div class="s2-callout-stripe"></div>
           <div class="s2-callout-label">WHAT IT MEANS</div>
           <div class="s2-callout-body">Your A.I. can now drive the machine. Useful, and a very new kind of trust.</div>
         </div>
       </div>
 
       <div class="s2-foot">
-        <div class="s2-dots"><span></span><span class="on"></span><span></span><span></span><span></span></div>
-        <div class="s2-counter">02 / 05</div>
+        <div class="s2-dots">
+          <span class="s2-d"></span><span class="s2-d s2-d-on"></span><span class="s2-d"></span><span class="s2-d"></span><span class="s2-d"></span>
+        </div>
+        <div class="s2-counter">02 &divide; 05</div>
       </div>
     </div>
 
@@ -47,6 +57,13 @@
         overflow: hidden;
         color: #F5EDE0;
       }
+      [data-composition-id="story-2"] .s2-wipe {
+        position: absolute;
+        inset: 0;
+        background: #FFC93C;
+        z-index: 999;
+        transform-origin: left center;
+      }
       [data-composition-id="story-2"] .s2-root {
         position: relative;
         width: 100%;
@@ -55,6 +72,21 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+      }
+      [data-composition-id="story-2"] .s2-bg-halftone {
+        position: absolute;
+        left: -60px; top: -60px; right: -60px; bottom: -60px;
+        pointer-events: none;
+        background-image: radial-gradient(circle, rgba(245,237,224,0.07) 2px, transparent 2.5px);
+        background-size: 34px 34px;
+        z-index: 0;
+      }
+      [data-composition-id="story-2"] .s2-bg-diagonal {
+        position: absolute;
+        left: -200px; top: -200px; right: -200px; bottom: -200px;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(45deg, rgba(255,201,60,0.06) 0, rgba(255,201,60,0.06) 2px, transparent 2px, transparent 54px);
+        z-index: 0;
       }
       [data-composition-id="story-2"] .s2-ghost {
         position: absolute;
@@ -78,6 +110,15 @@
         border-radius: 50%;
         background: #D4A5E8;
         opacity: 0.35;
+      }
+      [data-composition-id="story-2"] .s2-saffron-line {
+        position: absolute;
+        left: 0;
+        top: 248px;
+        width: 220px;
+        height: 6px;
+        background: #FFC93C;
+        opacity: 0.85;
       }
       [data-composition-id="story-2"] .s2-meta-top {
         display: flex;
@@ -108,6 +149,7 @@
         border: 1.5px solid #F5EDE0;
         border-radius: 999px;
         color: #F5EDE0;
+        transform-origin: left center;
       }
       [data-composition-id="story-2"] .s2-headline {
         font-family: 'Space Grotesk', sans-serif;
@@ -132,6 +174,10 @@
         color: #F5EDE0;
       }
       [data-composition-id="story-2"] .s2-h-bold2 { color: #FFC93C; }
+      [data-composition-id="story-2"] .chr {
+        display: inline-block;
+        transform-origin: 50% 100%;
+      }
       [data-composition-id="story-2"] .s2-path {
         font-family: 'JetBrains Mono', monospace;
         font-size: 22px;
@@ -157,6 +203,8 @@
         color: #FFC93C;
         letter-spacing: -0.02em;
       }
+      [data-composition-id="story-2"] .s2-m-word { display: inline-block; transform-origin: center bottom; }
+      [data-composition-id="story-2"] .s2-m-sep { display: inline-block; color: #F5EDE0; opacity: 0.5; }
       [data-composition-id="story-2"] .s2-metric-tag {
         display: flex;
         align-items: center;
@@ -170,10 +218,17 @@
         background: #FFC93C;
       }
       [data-composition-id="story-2"] .s2-callout {
+        position: relative;
         background: rgba(255,201,60,0.12);
-        border-left: 6px solid #FFC93C;
-        padding: 24px 30px;
+        padding: 24px 30px 24px 36px;
         max-width: 920px;
+      }
+      [data-composition-id="story-2"] .s2-callout-stripe {
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 6px;
+        background: #FFC93C;
+        transform-origin: top center;
       }
       [data-composition-id="story-2"] .s2-callout-label {
         font-family: 'JetBrains Mono', monospace;
@@ -202,15 +257,13 @@
         color: #F5EDE0;
       }
       [data-composition-id="story-2"] .s2-dots { display: flex; gap: 14px; }
-      [data-composition-id="story-2"] .s2-dots span {
+      [data-composition-id="story-2"] .s2-d {
         width: 12px; height: 12px; border-radius: 50%;
         background: #F5EDE0;
         opacity: 0.3;
+        display: inline-block;
       }
-      [data-composition-id="story-2"] .s2-dots span.on {
-        background: #FFC93C;
-        opacity: 1;
-      }
+      [data-composition-id="story-2"] .s2-d-on { background: #FFC93C; opacity: 1; }
       [data-composition-id="story-2"] .s2-counter { opacity: 0.75; }
     </style>
 
@@ -218,24 +271,78 @@
     <script>
       window.__timelines = window.__timelines || {};
       (function () {
-        const tl = gsap.timeline({ paused: true });
         const root = document.querySelector('[data-composition-id="story-2"]');
         const q = (s) => root.querySelector(s);
-        tl.from(q('.s2-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
-        tl.from(q('.s2-tag'), { x: -30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.25);
-        tl.from(q('.s2-h-italic'), { x: -40, opacity: 0, duration: 0.55, ease: 'back.out(1.5)' }, 0.35);
-        tl.from(q('.s2-h-bold'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.5);
-        tl.from(q('.s2-h-bold2'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.65);
-        tl.from(q('.s2-path'), { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.85);
-        tl.from(q('.s2-metric-label'), { opacity: 0, x: -10, duration: 0.4, ease: 'power2.out' }, 1.0);
-        tl.from(q('.s2-metric'), { y: 30, opacity: 0, duration: 0.55, ease: 'power3.out' }, 1.1);
-        tl.from(q('.s2-metric-tag'), { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.35);
-        tl.from(q('.s2-callout'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 1.55);
-        tl.from(q('.s2-foot'), { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' }, 1.9);
-        tl.fromTo(q('.s2-ghost'), { opacity: 0, x: 40 }, { opacity: 0.1, x: 0, duration: 1.6, ease: 'power1.out' }, 0);
-        tl.to(q('.s2-ghost'), { x: -20, duration: 8, ease: 'sine.inOut' }, 1);
-        tl.fromTo(q('.s2-mauve'), { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 0.35, duration: 1.0, ease: 'power2.out' }, 0.1);
-        tl.to(q('.s2-mauve'), { scale: 1.08, duration: 3, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        const qa = (s) => Array.from(root.querySelectorAll(s));
+
+        qa('[data-split]').forEach(el => {
+          const txt = el.textContent;
+          el.textContent = '';
+          for (const ch of txt) {
+            const s = document.createElement('span');
+            s.className = 'chr';
+            s.textContent = ch === ' ' ? '\u00A0' : ch;
+            el.appendChild(s);
+          }
+        });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Wipe (saffron, from left)
+        tl.to('.s2-wipe', { scaleX: 0, duration: 0.52, ease: 'power4.inOut' }, 0);
+        tl.set('.s2-wipe', { display: 'none' }, 0.52);
+
+        // Meta top
+        tl.from('.s2-meta-l', { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.32);
+        tl.from('.s2-meta-r', { x: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.38);
+
+        // Saffron line
+        tl.fromTo('.s2-saffron-line', { scaleX: 0, transformOrigin: 'left center' }, { scaleX: 1, duration: 0.6, ease: 'expo.out' }, 0.25);
+
+        // Tag
+        tl.from('.s2-tag', { x: -30, rotation: -6, opacity: 0, duration: 0.5, ease: 'back.out(2)' }, 0.45);
+
+        // Headline stagger
+        tl.from('.s2-h-italic .chr', { x: -20, opacity: 0, duration: 0.35, ease: 'power2.out', stagger: 0.018 }, 0.55);
+        tl.from('.s2-h-bold .chr', { y: 70, rotation: 3, opacity: 0, duration: 0.5, ease: 'back.out(2)', stagger: 0.025 }, 0.75);
+        tl.from('.s2-h-bold2 .chr', { y: 80, scale: 1.4, opacity: 0, duration: 0.5, ease: 'back.out(2.4)', stagger: 0.03 }, 1.0);
+
+        // Path
+        tl.from('.s2-path', { x: -30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.3);
+
+        // Metric
+        tl.from('.s2-metric-label', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.45);
+        tl.from('.s2-m-word', { y: 40, scale: 0.5, opacity: 0, duration: 0.45, ease: 'back.out(2.4)', stagger: 0.12 }, 1.55);
+        tl.from('.s2-m-sep', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2)', stagger: 0.12 }, 1.62);
+        tl.from('.s2-metric-tag', { x: 30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.0);
+
+        // Callout
+        tl.fromTo('.s2-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.15);
+        tl.from('.s2-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.2);
+        tl.from('.s2-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.4);
+        tl.from('.s2-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.5);
+
+        // Foot
+        tl.from('.s2-dots .s2-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.65);
+        tl.from('.s2-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.75);
+
+        // Ambient
+        // BG patterns
+        tl.fromTo('.s2-bg-halftone', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.25);
+        tl.to('.s2-bg-halftone', { x: 34, y: 34, duration: 14, ease: 'none' }, 0);
+        tl.fromTo('.s2-bg-diagonal', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.3);
+        tl.to('.s2-bg-diagonal', { x: -54, y: -54, duration: 14, ease: 'none' }, 0);
+
+        tl.fromTo('.s2-ghost', { opacity: 0, x: 40, scale: 0.95 }, { opacity: 0.1, x: 0, scale: 1, duration: 1.4, ease: 'power2.out' }, 0.3);
+        tl.to('.s2-ghost', { x: -25, rotation: 1, duration: 7, ease: 'sine.inOut' }, 1.8);
+        tl.fromTo('.s2-mauve', { scale: 0.85, opacity: 0 }, { scale: 1, opacity: 0.35, duration: 1.0, ease: 'power2.out' }, 0.3);
+        tl.to('.s2-mauve', { scale: 1.1, duration: 2.8, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        tl.to('.s2-m-word', { y: -6, duration: 1.2, ease: 'sine.inOut', yoyo: true, repeat: 2, stagger: 0.1 }, 3.5);
+        tl.to('.s2-d-on', { scale: 1.25, duration: 0.8, ease: 'sine.inOut', yoyo: true, repeat: 4 }, 3.2);
+
+        tl.to('[data-composition-id="story-2"]', { opacity: 0, duration: 0.18, ease: 'power2.in' }, 9.82);
+        tl.set('[data-composition-id="story-2"]', { opacity: 0, visibility: 'hidden' }, 10.0);
+
         window.__timelines['story-2'] = tl;
       })();
     </script>

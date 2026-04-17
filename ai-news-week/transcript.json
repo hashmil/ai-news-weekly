@@ -1,717 +1,712 @@
 [
   {
     "text": "This",
-    "start": 0.05,
-    "end": 0.33
+    "start": 0.04,
+    "end": 0.58
   },
   {
     "text": "week",
-    "start": 0.33,
-    "end": 0.66
+    "start": 0.58,
+    "end": 1.15
   },
   {
     "text": "in",
-    "start": 0.66,
-    "end": 0.82
+    "start": 1.15,
+    "end": 1.31
   },
   {
     "text": "AI,",
-    "start": 0.82,
-    "end": 1.1
+    "start": 1.7,
+    "end": 1.9
   },
   {
     "text": "five",
-    "start": 1.28,
-    "end": 1.56
+    "start": 1.9,
+    "end": 2.14
   },
   {
     "text": "stories",
-    "start": 1.56,
-    "end": 2.24
+    "start": 2.2,
+    "end": 2.68
   },
   {
     "text": "that",
-    "start": 2.24,
-    "end": 2.62
-  },
-  {
-    "text": "actually",
-    "start": 2.62,
+    "start": 2.68,
     "end": 2.96
   },
   {
+    "text": "actually",
+    "start": 2.96,
+    "end": 3.44
+  },
+  {
     "text": "matter.",
-    "start": 4,
-    "end": 4.02
+    "start": 3.44,
+    "end": 4.03
   },
   {
     "text": "Anthropic",
-    "start": 4.07,
-    "end": 4.7
+    "start": 4.03,
+    "end": 4.71
   },
   {
     "text": "just",
-    "start": 4.81,
-    "end": 5.03
+    "start": 4.82,
+    "end": 5.13
   },
   {
     "text": "dropped",
-    "start": 5.03,
-    "end": 5.58
+    "start": 5.13,
+    "end": 5.73
   },
   {
     "text": "Claude",
-    "start": 5.58,
-    "end": 5.97
+    "start": 5.83,
+    "end": 6.28
   },
   {
     "text": "Opus",
-    "start": 6.06,
-    "end": 6.27
+    "start": 6.28,
+    "end": 6.62
   },
   {
-    "text": "4.7,",
-    "start": 6.35,
-    "end": 7.12
+    "text": "4.7.",
+    "start": 6.62,
+    "end": 7.5
   },
   {
-    "text": "sharper",
-    "start": 7.17,
-    "end": 7.45
+    "text": "Sharper",
+    "start": 7.53,
+    "end": 7.97
   },
   {
     "text": "coding,",
-    "start": 7.55,
-    "end": 7.95
+    "start": 8.07,
+    "end": 8.6
   },
   {
     "text": "better",
-    "start": 7.95,
-    "end": 8.22
-  },
-  {
-    "text": "vision,",
-    "start": 8.4,
-    "end": 8.64
-  },
-  {
-    "text": "and",
-    "start": 8.69,
+    "start": 8.6,
     "end": 8.8
   },
   {
+    "text": "vision",
+    "start": 9.33,
+    "end": 9.5
+  },
+  {
+    "text": "and",
+    "start": 9.5,
+    "end": 9.74
+  },
+  {
     "text": "a",
-    "start": 8.83,
-    "end": 8.89
+    "start": 9.74,
+    "end": 9.82
   },
   {
     "text": "big",
-    "start": 8.89,
-    "end": 9.08
+    "start": 9.82,
+    "end": 10.02
   },
   {
     "text": "bump",
-    "start": 9.08,
-    "end": 9.32
+    "start": 10.08,
+    "end": 10.4
   },
   {
     "text": "on",
-    "start": 9.43,
-    "end": 9.47
+    "start": 10.4,
+    "end": 10.62
   },
   {
-    "text": "benchmarks,",
-    "start": 9.47,
-    "end": 10.3
+    "text": "benchmarks.",
+    "start": 10.62,
+    "end": 11.72
   },
   {
-    "text": "their",
-    "start": 10.35,
-    "end": 10.61
+    "text": "Their",
+    "start": 11.75,
+    "end": 12.16
   },
   {
     "text": "most",
-    "start": 10.61,
-    "end": 10.86
+    "start": 12.16,
+    "end": 12.43
   },
   {
     "text": "capable",
-    "start": 10.86,
-    "end": 11.3
+    "start": 12.53,
+    "end": 13
   },
   {
     "text": "Opus",
-    "start": 11.3,
-    "end": 11.54
+    "start": 13.29,
+    "end": 13.46
   },
   {
     "text": "yet.",
-    "start": 11.59,
-    "end": 11.96
+    "start": 13.55,
+    "end": 14.02
   },
   {
-    "text": "Open",
-    "start": 12.01,
-    "end": 12.46
-  },
-  {
-    "text": "AI",
-    "start": 12.46,
-    "end": 12.64
+    "text": "OpenAI",
+    "start": 14.05,
+    "end": 14.47
   },
   {
     "text": "gave",
-    "start": 12.75,
-    "end": 13.05
+    "start": 14.47,
+    "end": 14.73
   },
   {
-    "text": "Codex",
-    "start": 13.25,
-    "end": 13.84
+    "text": "codecs",
+    "start": 14.84,
+    "end": 15.21
   },
   {
     "text": "the",
-    "start": 13.84,
-    "end": 14.21
-  },
-  {
-    "text": "keys",
-    "start": 14.29,
-    "end": 14.72
-  },
-  {
-    "text": "to",
-    "start": 14.72,
-    "end": 14.91
-  },
-  {
-    "text": "your",
-    "start": 14.98,
+    "start": 15.21,
     "end": 15.33
   },
   {
-    "text": "computer.",
-    "start": 15.99,
-    "end": 16.92
-  },
-  {
-    "text": "It",
-    "start": 16.97,
-    "end": 17.03
-  },
-  {
-    "text": "can",
-    "start": 17.03,
-    "end": 17.19
-  },
-  {
-    "text": "now",
-    "start": 17.19,
-    "end": 17.25
-  },
-  {
-    "text": "see",
-    "start": 17.35,
-    "end": 17.51
-  },
-  {
-    "text": "your",
-    "start": 17.51,
-    "end": 17.73
-  },
-  {
-    "text": "screen,",
-    "start": 17.73,
-    "end": 18.2
-  },
-  {
-    "text": "move",
-    "start": 18.21,
-    "end": 18.39
-  },
-  {
-    "text": "your",
-    "start": 18.44,
-    "end": 18.68
-  },
-  {
-    "text": "cursor,",
-    "start": 18.68,
-    "end": 19.04
-  },
-  {
-    "text": "and",
-    "start": 19.09,
-    "end": 19.2
-  },
-  {
-    "text": "click",
-    "start": 19.27,
-    "end": 19.51
-  },
-  {
-    "text": "and",
-    "start": 19.51,
-    "end": 19.69
-  },
-  {
-    "text": "type",
-    "start": 19.69,
-    "end": 19.93
-  },
-  {
-    "text": "on",
-    "start": 19.93,
-    "end": 20.05
-  },
-  {
-    "text": "your",
-    "start": 20.05,
-    "end": 20.13
-  },
-  {
-    "text": "behalf.",
-    "start": 20.33,
-    "end": 20.84
-  },
-  {
-    "text": "The",
-    "start": 20.89,
-    "end": 21
-  },
-  {
-    "text": "assistant",
-    "start": 21.03,
-    "end": 21.52
-  },
-  {
-    "text": "became",
-    "start": 21.63,
-    "end": 21.92
-  },
-  {
-    "text": "an",
-    "start": 21.92,
-    "end": 21.94
-  },
-  {
-    "text": "operator.",
-    "start": 22.13,
-    "end": 22.72
-  },
-  {
-    "text": "Visa",
-    "start": 22.77,
-    "end": 23.28
-  },
-  {
-    "text": "just",
-    "start": 23.28,
-    "end": 23.81
-  },
-  {
-    "text": "gave",
-    "start": 24.01,
-    "end": 24.4
-  },
-  {
-    "text": "AI",
-    "start": 24.4,
-    "end": 24.67
-  },
-  {
-    "text": "agents",
-    "start": 24.68,
-    "end": 25.52
-  },
-  {
-    "text": "a",
-    "start": 25.52,
-    "end": 25.66
-  },
-  {
-    "text": "wallet",
-    "start": 25.66,
-    "end": 25.72
-  },
-  {
-    "text": "that",
-    "start": 26.57,
-    "end": 26.71
-  },
-  {
-    "text": "can",
-    "start": 26.75,
-    "end": 26.85
-  },
-  {
-    "text": "now",
-    "start": 26.95,
-    "end": 27.02
-  },
-  {
-    "text": "make",
-    "start": 27.02,
-    "end": 27.2
-  },
-  {
-    "text": "purchases",
-    "start": 27.31,
-    "end": 27.62
-  },
-  {
-    "text": "on",
-    "start": 27.62,
-    "end": 27.81
-  },
-  {
-    "text": "your",
-    "start": 27.81,
-    "end": 28.07
-  },
-  {
-    "text": "behalf",
-    "start": 28.07,
-    "end": 28.46
-  },
-  {
-    "text": "autonomously.",
-    "start": 28.46,
-    "end": 29.43
-  },
-  {
-    "text": "The",
-    "start": 29.49,
-    "end": 29.6
-  },
-  {
-    "text": "checkout",
-    "start": 29.63,
-    "end": 30.12
-  },
-  {
-    "text": "is",
-    "start": 30.23,
-    "end": 30.26
-  },
-  {
-    "text": "no",
-    "start": 30.26,
-    "end": 30.38
-  },
-  {
-    "text": "longer",
-    "start": 30.38,
-    "end": 30.76
-  },
-  {
-    "text": "yours",
-    "start": 30.76,
-    "end": 31.03
-  },
-  {
-    "text": "alone.",
-    "start": 31.09,
-    "end": 31.62
-  },
-  {
-    "text": "Anthropic",
-    "start": 31.67,
-    "end": 32.71
-  },
-  {
-    "text": "secured",
-    "start": 32.91,
-    "end": 33.79
-  },
-  {
-    "text": "3.5",
-    "start": 33.79,
-    "end": 34.62
-  },
-  {
-    "text": "gigawatts",
-    "start": 34.62,
-    "end": 36.12
-  },
-  {
-    "text": "of",
-    "start": 36.24,
-    "end": 36.36
-  },
-  {
-    "text": "Google",
-    "start": 36.36,
-    "end": 36.71
-  },
-  {
-    "text": "computing",
-    "start": 36.73,
-    "end": 37.19
-  },
-  {
-    "text": "power,",
-    "start": 37.28,
-    "end": 37.68
-  },
-  {
-    "text": "enough",
-    "start": 37.73,
-    "end": 38.01
-  },
-  {
-    "text": "electricity",
-    "start": 38.11,
-    "end": 38.7
+    "text": "keys",
+    "start": 15.7,
+    "end": 15.75
   },
   {
     "text": "to",
-    "start": 38.7,
-    "end": 38.78
+    "start": 15.85,
+    "end": 15.9
   },
   {
-    "text": "run",
-    "start": 38.97,
-    "end": 39
+    "text": "your",
+    "start": 15.9,
+    "end": 16.16
   },
   {
-    "text": "a",
-    "start": 39,
-    "end": 39.06
+    "text": "computer.",
+    "start": 16.22,
+    "end": 17.1
   },
   {
-    "text": "small",
-    "start": 39.06,
-    "end": 39.36
-  },
-  {
-    "text": "country.",
-    "start": 39.36,
-    "end": 39.8
-  },
-  {
-    "text": "That",
-    "start": 39.85,
-    "end": 39.99
-  },
-  {
-    "text": "is",
-    "start": 40.03,
-    "end": 40.11
-  },
-  {
-    "text": "how",
-    "start": 40.11,
-    "end": 40.27
-  },
-  {
-    "text": "much",
-    "start": 40.27,
-    "end": 40.48
-  },
-  {
-    "text": "juice",
-    "start": 40.48,
-    "end": 40.76
-  },
-  {
-    "text": "the",
-    "start": 40.76,
-    "end": 40.89
-  },
-  {
-    "text": "next",
-    "start": 41.09,
-    "end": 41.53
-  },
-  {
-    "text": "generation",
-    "start": 41.53,
-    "end": 42.63
-  },
-  {
-    "text": "of",
-    "start": 42.63,
-    "end": 42.76
-  },
-  {
-    "text": "AI",
-    "start": 42.85,
-    "end": 43.05
-  },
-  {
-    "text": "needs.",
-    "start": 43.05,
-    "end": 43.95
-  },
-  {
-    "text": "Google",
-    "start": 44.05,
-    "end": 44.33
-  },
-  {
-    "text": "Gemini",
-    "start": 44.43,
-    "end": 44.68
-  },
-  {
-    "text": "now",
-    "start": 44.79,
-    "end": 44.95
-  },
-  {
-    "text": "answers",
-    "start": 44.95,
-    "end": 45.4
-  },
-  {
-    "text": "questions",
-    "start": 45.4,
-    "end": 45.95
-  },
-  {
-    "text": "with",
-    "start": 46.05,
-    "end": 46.25
-  },
-  {
-    "text": "interactive",
-    "start": 46.25,
-    "end": 46.95
-  },
-  {
-    "text": "3D",
-    "start": 46.95,
-    "end": 47.2
-  },
-  {
-    "text": "models",
-    "start": 47.29,
-    "end": 47.59
-  },
-  {
-    "text": "you",
-    "start": 47.65,
-    "end": 47.82
+    "text": "It",
+    "start": 17.14,
+    "end": 17.23
   },
   {
     "text": "can",
-    "start": 47.82,
-    "end": 47.95
+    "start": 17.23,
+    "end": 17.42
   },
   {
-    "text": "rotate",
-    "start": 48.04,
-    "end": 48.49
+    "text": "now",
+    "start": 17.42,
+    "end": 17.57
+  },
+  {
+    "text": "see",
+    "start": 17.67,
+    "end": 17.8
+  },
+  {
+    "text": "your",
+    "start": 17.8,
+    "end": 18.06
+  },
+  {
+    "text": "screen,",
+    "start": 18.06,
+    "end": 18.62
+  },
+  {
+    "text": "move",
+    "start": 18.93,
+    "end": 18.98
+  },
+  {
+    "text": "your",
+    "start": 18.98,
+    "end": 19.34
+  },
+  {
+    "text": "cursor",
+    "start": 19.34,
+    "end": 19.87
   },
   {
     "text": "and",
-    "start": 48.49,
-    "end": 48.71
+    "start": 19.91,
+    "end": 20.11
   },
   {
-    "text": "poke.",
-    "start": 48.71,
-    "end": 49.09
+    "text": "click",
+    "start": 20.11,
+    "end": 20.49
   },
   {
-    "text": "AI",
-    "start": 49.33,
-    "end": 49.44
+    "text": "and",
+    "start": 20.49,
+    "end": 20.72
   },
   {
-    "text": "responses",
-    "start": 49.51,
-    "end": 50.24
+    "text": "type",
+    "start": 20.72,
+    "end": 21.02
+  },
+  {
+    "text": "on",
+    "start": 21.02,
+    "end": 21.18
+  },
+  {
+    "text": "your",
+    "start": 21.18,
+    "end": 21.21
+  },
+  {
+    "text": "behalf.",
+    "start": 21.71,
+    "end": 22.22
+  },
+  {
+    "text": "The",
+    "start": 22.26,
+    "end": 22.39
+  },
+  {
+    "text": "assistant",
+    "start": 22.39,
+    "end": 22.9
+  },
+  {
+    "text": "became",
+    "start": 22.9,
+    "end": 23.24
+  },
+  {
+    "text": "an",
+    "start": 23.24,
+    "end": 23.35
+  },
+  {
+    "text": "operator.",
+    "start": 23.35,
+    "end": 23.96
+  },
+  {
+    "text": "Visa",
+    "start": 24.03,
+    "end": 24.43
   },
   {
     "text": "just",
-    "start": 50.24,
-    "end": 50.59
+    "start": 24.43,
+    "end": 24.86
   },
   {
-    "text": "got",
-    "start": 50.59,
-    "end": 50.85
+    "text": "gave",
+    "start": 24.86,
+    "end": 25.28
+  },
+  {
+    "text": "AI",
+    "start": 25.28,
+    "end": 25.33
+  },
+  {
+    "text": "agents",
+    "start": 25.83,
+    "end": 26.14
   },
   {
     "text": "a",
-    "start": 50.85,
-    "end": 50.87
+    "start": 26.14,
+    "end": 26.24
   },
   {
-    "text": "lot",
-    "start": 50.93,
-    "end": 51.19
+    "text": "wallet.",
+    "start": 26.24,
+    "end": 27.24
   },
   {
-    "text": "more",
-    "start": 51.19,
-    "end": 51.53
+    "text": "They",
+    "start": 27.27,
+    "end": 27.47
   },
   {
-    "text": "visual.",
-    "start": 51.61,
-    "end": 52.24
+    "text": "can",
+    "start": 27.47,
+    "end": 27.64
   },
   {
-    "text": "That",
-    "start": 52.43,
-    "end": 52.9
+    "text": "now",
+    "start": 27.64,
+    "end": 27.71
+  },
+  {
+    "text": "make",
+    "start": 27.81,
+    "end": 27.95
+  },
+  {
+    "text": "purchases",
+    "start": 28.05,
+    "end": 28.52
+  },
+  {
+    "text": "on",
+    "start": 28.52,
+    "end": 29.07
+  },
+  {
+    "text": "your",
+    "start": 29.07,
+    "end": 29.11
+  },
+  {
+    "text": "behalf",
+    "start": 29.11,
+    "end": 29.64
+  },
+  {
+    "text": "autonomously.",
+    "start": 29.67,
+    "end": 30.96
+  },
+  {
+    "text": "The",
+    "start": 31.23,
+    "end": 31.44
+  },
+  {
+    "text": "checkout",
+    "start": 31.44,
+    "end": 32.1
   },
   {
     "text": "is",
-    "start": 52.9,
-    "end": 53.06
+    "start": 32.1,
+    "end": 32.26
+  },
+  {
+    "text": "no",
+    "start": 32.26,
+    "end": 32.42
+  },
+  {
+    "text": "longer",
+    "start": 32.42,
+    "end": 32.91
+  },
+  {
+    "text": "yours",
+    "start": 33.03,
+    "end": 33.32
+  },
+  {
+    "text": "alone.",
+    "start": 33.32,
+    "end": 33.98
+  },
+  {
+    "text": "Anthropic",
+    "start": 34.05,
+    "end": 34.69
+  },
+  {
+    "text": "secured",
+    "start": 34.69,
+    "end": 35.21
+  },
+  {
+    "text": "3.5",
+    "start": 35.21,
+    "end": 35.88
+  },
+  {
+    "text": "gigawatts",
+    "start": 35.88,
+    "end": 36.54
+  },
+  {
+    "text": "of",
+    "start": 36.6,
+    "end": 36.77
+  },
+  {
+    "text": "Google",
+    "start": 36.77,
+    "end": 37.28
+  },
+  {
+    "text": "computing",
+    "start": 37.28,
+    "end": 37.47
+  },
+  {
+    "text": "power.",
+    "start": 38.04,
+    "end": 38.48
+  },
+  {
+    "text": "Enough",
+    "start": 38.51,
+    "end": 38.91
+  },
+  {
+    "text": "electricity",
+    "start": 38.91,
+    "end": 39.71
+  },
+  {
+    "text": "to",
+    "start": 39.71,
+    "end": 39.79
+  },
+  {
+    "text": "run",
+    "start": 39.79,
+    "end": 40.05
+  },
+  {
+    "text": "a",
+    "start": 40.05,
+    "end": 40.31
+  },
+  {
+    "text": "small",
+    "start": 40.31,
+    "end": 40.49
+  },
+  {
+    "text": "country.",
+    "start": 40.49,
+    "end": 41.04
+  },
+  {
+    "text": "That",
+    "start": 41.07,
+    "end": 41.27
+  },
+  {
+    "text": "is",
+    "start": 41.27,
+    "end": 41.39
+  },
+  {
+    "text": "how",
+    "start": 41.39,
+    "end": 41.51
+  },
+  {
+    "text": "much",
+    "start": 41.61,
+    "end": 41.75
+  },
+  {
+    "text": "juice",
+    "start": 41.86,
+    "end": 42.12
   },
   {
     "text": "the",
-    "start": 53.17,
-    "end": 53.48
+    "start": 42.12,
+    "end": 42.3
   },
   {
-    "text": "week",
-    "start": 53.67,
-    "end": 54.07
+    "text": "next",
+    "start": 42.3,
+    "end": 42.36
   },
   {
-    "text": "five",
-    "start": 54.07,
-    "end": 54.59
+    "text": "generation",
+    "start": 42.87,
+    "end": 43.18
   },
   {
-    "text": "stories,",
-    "start": 54.59,
-    "end": 55.76
+    "text": "of",
+    "start": 43.24,
+    "end": 43.36
   },
   {
-    "text": "one",
-    "start": 55.76,
-    "end": 55.84
+    "text": "AI",
+    "start": 43.36,
+    "end": 43.49
   },
   {
-    "text": "minute",
-    "start": 55.84,
-    "end": 56.41
+    "text": "needs.",
+    "start": 43.49,
+    "end": 44.04
   },
   {
-    "text": "follow",
-    "start": 56.41,
-    "end": 56.71
+    "text": "Google",
+    "start": 44.07,
+    "end": 44.48
   },
   {
-    "text": "for",
-    "start": 56.71,
-    "end": 56.88
+    "text": "Gemini",
+    "start": 44.48,
+    "end": 44.92
   },
   {
-    "text": "more.",
-    "start": 57,
-    "end": 57.38
+    "text": "now",
+    "start": 44.92,
+    "end": 45.14
+  },
+  {
+    "text": "answers",
+    "start": 45.14,
+    "end": 45.34
+  },
+  {
+    "text": "questions",
+    "start": 45.87,
+    "end": 46.32
+  },
+  {
+    "text": "with",
+    "start": 46.35,
+    "end": 46.64
+  },
+  {
+    "text": "interactive",
+    "start": 46.65,
+    "end": 47.57
+  },
+  {
+    "text": "3D",
+    "start": 47.57,
+    "end": 47.91
+  },
+  {
+    "text": "models",
+    "start": 48.15,
+    "end": 48.44
   },
   {
     "text": "you",
-    "start": 59.49,
-    "end": 61.5
+    "start": 48.44,
+    "end": 48.71
+  },
+  {
+    "text": "can",
+    "start": 48.71,
+    "end": 48.97
+  },
+  {
+    "text": "rotate",
+    "start": 48.99,
+    "end": 49.53
+  },
+  {
+    "text": "and",
+    "start": 49.53,
+    "end": 49.76
+  },
+  {
+    "text": "poke.",
+    "start": 49.8,
+    "end": 50.48
+  },
+  {
+    "text": "AI",
+    "start": 50.51,
+    "end": 50.68
+  },
+  {
+    "text": "responses",
+    "start": 50.68,
+    "end": 51.59
+  },
+  {
+    "text": "just",
+    "start": 51.59,
+    "end": 51.78
+  },
+  {
+    "text": "got",
+    "start": 52.2,
+    "end": 52.22
+  },
+  {
+    "text": "a",
+    "start": 52.31,
+    "end": 52.39
+  },
+  {
+    "text": "lot",
+    "start": 52.39,
+    "end": 52.69
+  },
+  {
+    "text": "more",
+    "start": 52.69,
+    "end": 53.09
+  },
+  {
+    "text": "visual.",
+    "start": 53.09,
+    "end": 53.93
+  },
+  {
+    "text": "That",
+    "start": 54.07,
+    "end": 54.3
+  },
+  {
+    "text": "is",
+    "start": 54.32,
+    "end": 54.47
+  },
+  {
+    "text": "the",
+    "start": 54.47,
+    "end": 54.69
+  },
+  {
+    "text": "week,",
+    "start": 54.69,
+    "end": 55.16
+  },
+  {
+    "text": "five",
+    "start": 55.16,
+    "end": 55.34
+  },
+  {
+    "text": "stories,",
+    "start": 55.87,
+    "end": 56.15
+  },
+  {
+    "text": "one",
+    "start": 56.15,
+    "end": 56.39
+  },
+  {
+    "text": "minute.",
+    "start": 56.39,
+    "end": 57.08
+  },
+  {
+    "text": "Follow",
+    "start": 57.11,
+    "end": 57.47
+  },
+  {
+    "text": "for",
+    "start": 57.47,
+    "end": 57.66
+  },
+  {
+    "text": "more.",
+    "start": 57.66,
+    "end": 58.14
+  },
+  {
+    "text": "you",
+    "start": 59.67,
+    "end": 61.7
   }
 ]

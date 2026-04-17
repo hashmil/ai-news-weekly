@@ -2,40 +2,50 @@
   <div data-composition-id="story-3" data-width="1080" data-height="1920" data-start="0" data-duration="10">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <div class="s3-wipe"></div>
+
     <div class="s3-root">
+      <div class="s3-bg-halftone"></div>
+      <div class="s3-bg-ticker"></div>
       <div class="s3-ghost">03</div>
+      <div class="s3-ink-bar"></div>
 
       <div class="s3-meta-top">
-        <span>ENTRY 03 OF 05</span>
-        <span>visa.com</span>
+        <span class="s3-meta-l">ENTRY 03 OF 05</span>
+        <span class="s3-meta-r">visa.com</span>
       </div>
 
       <div class="s3-body">
-        <div class="s3-tag">PAYMENTS · AGENTS</div>
+        <div class="s3-tag">PAYMENTS &middot; AGENTS</div>
         <h1 class="s3-headline">
-          <span class="s3-h-bold">VISA HANDS A.I.</span>
-          <span class="s3-h-italic">a shiny new</span>
-          <span class="s3-h-bold2">WALLET.</span>
+          <span class="s3-h-bold" data-split>VISA HANDS A.I.</span>
+          <span class="s3-h-italic" data-split>a shiny new</span>
+          <span class="s3-h-bold2" data-split>WALLET.</span>
         </h1>
-        <div class="s3-path">visa.com / ai-ready-commerce</div>
+        <div class="s3-path">visa.com &middot; ai-ready-commerce</div>
 
         <div class="s3-metric-row">
           <div class="s3-metric-block">
             <div class="s3-metric-label">AGENT AUTHORITY</div>
-            <div class="s3-metric">AUTONOMOUS</div>
-            <div class="s3-metric-sub">pay · swap · subscribe</div>
+            <div class="s3-metric" data-split>AUTONOMOUS</div>
+            <div class="s3-metric-sub">
+              <span class="s3-sub-word">pay</span><span class="s3-sub-sep"> &middot; </span><span class="s3-sub-word">swap</span><span class="s3-sub-sep"> &middot; </span><span class="s3-sub-word">subscribe</span>
+            </div>
           </div>
         </div>
 
         <div class="s3-callout">
+          <div class="s3-callout-stripe"></div>
           <div class="s3-callout-label">WHAT IT MEANS</div>
           <div class="s3-callout-body">Your assistant can now spend for you. Convenient, and worth a careful read of the permissions.</div>
         </div>
       </div>
 
       <div class="s3-foot">
-        <div class="s3-dots"><span></span><span></span><span class="on"></span><span></span><span></span></div>
-        <div class="s3-counter">03 / 05</div>
+        <div class="s3-dots">
+          <span class="s3-d"></span><span class="s3-d"></span><span class="s3-d s3-d-on"></span><span class="s3-d"></span><span class="s3-d"></span>
+        </div>
+        <div class="s3-counter">03 &divide; 05</div>
       </div>
     </div>
 
@@ -48,6 +58,13 @@
         overflow: hidden;
         color: #F5EDE0;
       }
+      [data-composition-id="story-3"] .s3-wipe {
+        position: absolute;
+        inset: 0;
+        background: #1A1A1A;
+        z-index: 999;
+        transform-origin: right center;
+      }
       [data-composition-id="story-3"] .s3-root {
         position: relative;
         width: 100%;
@@ -56,6 +73,21 @@
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
+      }
+      [data-composition-id="story-3"] .s3-bg-halftone {
+        position: absolute;
+        left: -60px; top: -60px; right: -60px; bottom: -60px;
+        pointer-events: none;
+        background-image: radial-gradient(circle, rgba(255,201,60,0.1) 2px, transparent 2.5px);
+        background-size: 36px 36px;
+        z-index: 0;
+      }
+      [data-composition-id="story-3"] .s3-bg-ticker {
+        position: absolute;
+        left: 0; right: 0; top: -140px; bottom: -140px;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(0deg, transparent 0, transparent 76px, rgba(26,26,26,0.09) 76px, rgba(26,26,26,0.09) 78px, transparent 78px, transparent 140px);
+        z-index: 0;
       }
       [data-composition-id="story-3"] .s3-ghost {
         position: absolute;
@@ -69,6 +101,15 @@
         left: -40px;
         letter-spacing: -0.06em;
         pointer-events: none;
+      }
+      [data-composition-id="story-3"] .s3-ink-bar {
+        position: absolute;
+        right: 0;
+        top: 248px;
+        width: 160px;
+        height: 10px;
+        background: #1A1A1A;
+        opacity: 0.9;
       }
       [data-composition-id="story-3"] .s3-meta-top {
         display: flex;
@@ -97,6 +138,7 @@
         padding: 10px 22px;
         border: 1.5px solid #F5EDE0;
         border-radius: 999px;
+        transform-origin: left center;
       }
       [data-composition-id="story-3"] .s3-headline {
         font-family: 'Space Grotesk', sans-serif;
@@ -107,7 +149,9 @@
         margin: 0;
         color: #F5EDE0;
       }
-      [data-composition-id="story-3"] .s3-h-bold { display: block; }
+      [data-composition-id="story-3"] .s3-h-bold,
+      [data-composition-id="story-3"] .s3-h-bold2 { display: block; }
+      [data-composition-id="story-3"] .s3-h-bold2 { color: #FFC93C; }
       [data-composition-id="story-3"] .s3-h-italic {
         display: block;
         font-family: 'Inter Tight', sans-serif;
@@ -115,9 +159,12 @@
         font-style: italic;
         color: #FFC93C;
         font-size: 88px;
-        margin: 6px 0 6px 0;
+        margin: 6px 0;
       }
-      [data-composition-id="story-3"] .s3-h-bold2 { display: block; color: #FFC93C; }
+      [data-composition-id="story-3"] .chr {
+        display: inline-block;
+        transform-origin: 50% 100%;
+      }
       [data-composition-id="story-3"] .s3-path {
         font-family: 'JetBrains Mono', monospace;
         font-size: 22px;
@@ -149,11 +196,20 @@
         letter-spacing: 0.1em;
         opacity: 0.9;
       }
+      [data-composition-id="story-3"] .s3-sub-word { display: inline-block; transform-origin: center; }
+      [data-composition-id="story-3"] .s3-sub-sep { display: inline-block; color: #FFC93C; }
       [data-composition-id="story-3"] .s3-callout {
+        position: relative;
         background: rgba(255,201,60,0.15);
-        border-left: 6px solid #FFC93C;
-        padding: 24px 30px;
+        padding: 24px 30px 24px 36px;
         max-width: 920px;
+      }
+      [data-composition-id="story-3"] .s3-callout-stripe {
+        position: absolute;
+        left: 0; top: 0; bottom: 0;
+        width: 6px;
+        background: #FFC93C;
+        transform-origin: top center;
       }
       [data-composition-id="story-3"] .s3-callout-label {
         font-family: 'JetBrains Mono', monospace;
@@ -181,15 +237,13 @@
         letter-spacing: 0.1em;
       }
       [data-composition-id="story-3"] .s3-dots { display: flex; gap: 14px; }
-      [data-composition-id="story-3"] .s3-dots span {
+      [data-composition-id="story-3"] .s3-d {
         width: 12px; height: 12px; border-radius: 50%;
         background: #F5EDE0;
         opacity: 0.35;
+        display: inline-block;
       }
-      [data-composition-id="story-3"] .s3-dots span.on {
-        background: #FFC93C;
-        opacity: 1;
-      }
+      [data-composition-id="story-3"] .s3-d-on { background: #FFC93C; opacity: 1; }
       [data-composition-id="story-3"] .s3-counter { opacity: 0.8; }
     </style>
 
@@ -197,22 +251,66 @@
     <script>
       window.__timelines = window.__timelines || {};
       (function () {
-        const tl = gsap.timeline({ paused: true });
         const root = document.querySelector('[data-composition-id="story-3"]');
-        const q = (s) => root.querySelector(s);
-        tl.from(q('.s3-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
-        tl.from(q('.s3-tag'), { x: -30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.25);
-        tl.from(q('.s3-h-bold'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.35);
-        tl.from(q('.s3-h-italic'), { x: 50, opacity: 0, duration: 0.55, ease: 'back.out(1.6)' }, 0.55);
-        tl.from(q('.s3-h-bold2'), { y: 50, opacity: 0, duration: 0.6, ease: 'expo.out' }, 0.7);
-        tl.from(q('.s3-path'), { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 0.9);
-        tl.from(q('.s3-metric-label'), { opacity: 0, x: -10, duration: 0.4, ease: 'power2.out' }, 1.05);
-        tl.fromTo(q('.s3-metric'), { scale: 0.6, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: 'back.out(1.6)' }, 1.15);
-        tl.from(q('.s3-metric-sub'), { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.4);
-        tl.from(q('.s3-callout'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 1.55);
-        tl.from(q('.s3-foot'), { opacity: 0, y: 20, duration: 0.4, ease: 'power2.out' }, 1.9);
-        tl.fromTo(q('.s3-ghost'), { opacity: 0, y: 30 }, { opacity: 0.13, y: 0, duration: 1.5, ease: 'power1.out' }, 0);
-        tl.to(q('.s3-ghost'), { y: -20, duration: 8, ease: 'sine.inOut' }, 1);
+        const qa = (s) => Array.from(root.querySelectorAll(s));
+
+        qa('[data-split]').forEach(el => {
+          const txt = el.textContent;
+          el.textContent = '';
+          for (const ch of txt) {
+            const s = document.createElement('span');
+            s.className = 'chr';
+            s.textContent = ch === ' ' ? '\u00A0' : ch;
+            el.appendChild(s);
+          }
+        });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Wipe (ink, from right)
+        tl.to('.s3-wipe', { scaleX: 0, duration: 0.52, ease: 'power4.inOut' }, 0);
+        tl.set('.s3-wipe', { display: 'none' }, 0.52);
+
+        tl.from('.s3-meta-l', { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.32);
+        tl.from('.s3-meta-r', { x: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.38);
+        tl.fromTo('.s3-ink-bar', { scaleX: 0, transformOrigin: 'right center' }, { scaleX: 1, duration: 0.6, ease: 'expo.out' }, 0.25);
+
+        tl.from('.s3-tag', { x: -30, rotation: -6, opacity: 0, duration: 0.5, ease: 'back.out(2)' }, 0.45);
+
+        tl.from('.s3-h-bold .chr', { y: 70, rotation: 3, opacity: 0, duration: 0.5, ease: 'back.out(2)', stagger: 0.02 }, 0.55);
+        tl.from('.s3-h-italic .chr', { x: 40, opacity: 0, duration: 0.4, ease: 'power3.out', stagger: 0.018 }, 0.85);
+        tl.from('.s3-h-bold2 .chr', { y: 80, scale: 1.4, opacity: 0, duration: 0.5, ease: 'back.out(2.4)', stagger: 0.04 }, 1.05);
+
+        tl.from('.s3-path', { x: -30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.3);
+
+        tl.from('.s3-metric-label', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.45);
+        tl.from('.s3-metric .chr', { y: 60, scale: 1.2, opacity: 0, duration: 0.5, ease: 'back.out(2)', stagger: 0.035 }, 1.55);
+        tl.from('.s3-sub-word', { y: 20, scale: 0.6, opacity: 0, duration: 0.4, ease: 'back.out(2.4)', stagger: 0.1 }, 1.95);
+        tl.from('.s3-sub-sep', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2)', stagger: 0.1 }, 2.0);
+
+        tl.fromTo('.s3-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.2);
+        tl.from('.s3-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.25);
+        tl.from('.s3-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.45);
+        tl.from('.s3-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.55);
+
+        tl.from('.s3-dots .s3-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.7);
+        tl.from('.s3-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.8);
+
+        // BG patterns
+        tl.fromTo('.s3-bg-halftone', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.25);
+        tl.to('.s3-bg-halftone', { x: -36, y: -36, duration: 14, ease: 'none' }, 0);
+        tl.fromTo('.s3-bg-ticker', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.3);
+        tl.to('.s3-bg-ticker', { y: -140, duration: 9, ease: 'none' }, 0);
+
+        tl.fromTo('.s3-ghost', { opacity: 0, y: 30, scale: 0.95 }, { opacity: 0.13, y: 0, scale: 1, duration: 1.3, ease: 'power2.out' }, 0.3);
+        tl.to('.s3-ghost', { y: -25, rotation: -1, duration: 7, ease: 'sine.inOut' }, 1.7);
+        tl.to('.s3-ink-bar', { scaleX: 1.15, duration: 2.5, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        tl.to('.s3-sub-word', { y: -4, duration: 1.1, ease: 'sine.inOut', yoyo: true, repeat: 2, stagger: 0.08 }, 3.5);
+        tl.to('.s3-d-on', { scale: 1.3, duration: 0.8, ease: 'sine.inOut', yoyo: true, repeat: 4 }, 3.2);
+
+        tl.to('[data-composition-id="story-3"]', { opacity: 0, duration: 0.18, ease: 'power2.in' }, 9.82);
+        tl.set('[data-composition-id="story-3"]', { opacity: 0, visibility: 'hidden' }, 10.0);
+
         window.__timelines['story-3'] = tl;
       })();
     </script>

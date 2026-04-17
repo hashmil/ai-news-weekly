@@ -2,19 +2,24 @@
   <div data-composition-id="outro" data-width="1080" data-height="1920" data-start="0" data-duration="6">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&family=Inter+Tight:ital,wght@1,200;1,300&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
+    <div class="o-wipe"></div>
+
     <div class="o-root">
+      <div class="o-bg-halftone"></div>
+      <div class="o-bg-diagonal"></div>
       <div class="o-mauve-circle"></div>
       <div class="o-saffron-dot"></div>
+      <div class="o-saffron-bar"></div>
 
       <div class="o-meta-top">
-        <span>COLOPHON</span>
-        <span>AI WEEKLY · 17/04/2026</span>
+        <span class="o-meta-l">COLOPHON</span>
+        <span class="o-meta-r">AI WEEKLY &middot; 17/04/2026</span>
       </div>
 
       <div class="o-title-block">
         <h1 class="o-title">
-          <span class="o-t1">SEE YOU</span>
-          <span class="o-t2">next week.</span>
+          <span class="o-t1" data-split>SEE YOU</span>
+          <span class="o-t2" data-split>next week.</span>
         </h1>
         <div class="o-sub">Follow for a fresh edit every Friday.</div>
       </div>
@@ -22,19 +27,19 @@
       <div class="o-colophon">
         <div class="o-col">
           <div class="o-col-head">SOURCES</div>
-          <div class="o-col-body">Axios · TechCrunch · CNBC · Visa · Google</div>
+          <div class="o-col-body">Axios &middot; TechCrunch &middot; CNBC &middot; Visa &middot; Google</div>
         </div>
         <div class="o-col">
           <div class="o-col-head">TYPE</div>
-          <div class="o-col-body">Space Grotesk · Inter Tight · JetBrains Mono</div>
+          <div class="o-col-body">Space Grotesk &middot; Inter Tight &middot; JetBrains Mono</div>
         </div>
         <div class="o-col">
           <div class="o-col-head">NEXT ISSUE</div>
-          <div class="o-col-body">N°18 · APR 24</div>
+          <div class="o-col-body">N°18 &middot; APR 24</div>
         </div>
       </div>
 
-      <div class="o-foot">→ TAP TO FOLLOW</div>
+      <div class="o-foot">&#x2192; TAP TO FOLLOW</div>
     </div>
 
     <style>
@@ -46,6 +51,13 @@
         overflow: hidden;
         color: #F5EDE0;
       }
+      [data-composition-id="outro"] .o-wipe {
+        position: absolute;
+        inset: 0;
+        background: #D4A5E8;
+        z-index: 999;
+        transform-origin: left center;
+      }
       [data-composition-id="outro"] .o-root {
         position: relative;
         width: 100%;
@@ -55,6 +67,21 @@
         flex-direction: column;
         justify-content: space-between;
         box-sizing: border-box;
+      }
+      [data-composition-id="outro"] .o-bg-halftone {
+        position: absolute;
+        left: -60px; top: -60px; right: -60px; bottom: -60px;
+        pointer-events: none;
+        background-image: radial-gradient(circle, rgba(245,237,224,0.07) 2px, transparent 2.5px);
+        background-size: 36px 36px;
+        z-index: 0;
+      }
+      [data-composition-id="outro"] .o-bg-diagonal {
+        position: absolute;
+        left: -200px; top: -200px; right: -200px; bottom: -200px;
+        pointer-events: none;
+        background-image: repeating-linear-gradient(-45deg, rgba(212,165,232,0.06) 0, rgba(212,165,232,0.06) 2px, transparent 2px, transparent 60px);
+        z-index: 0;
       }
       [data-composition-id="outro"] .o-mauve-circle {
         position: absolute;
@@ -74,6 +101,15 @@
         height: 100px;
         border-radius: 50%;
         background: #FFC93C;
+      }
+      [data-composition-id="outro"] .o-saffron-bar {
+        position: absolute;
+        left: 80px;
+        top: 55%;
+        width: 240px;
+        height: 8px;
+        background: #FFC93C;
+        transform-origin: left center;
       }
       [data-composition-id="outro"] .o-meta-top {
         display: flex;
@@ -105,6 +141,10 @@
         font-style: italic;
         color: #FFC93C;
         font-size: 160px;
+      }
+      [data-composition-id="outro"] .chr {
+        display: inline-block;
+        transform-origin: 50% 100%;
       }
       [data-composition-id="outro"] .o-sub {
         font-family: 'Inter Tight', sans-serif;
@@ -152,20 +192,55 @@
     <script>
       window.__timelines = window.__timelines || {};
       (function () {
-        const tl = gsap.timeline({ paused: true });
         const root = document.querySelector('[data-composition-id="outro"]');
-        const q = (s) => root.querySelector(s);
-        tl.from(q('.o-meta-top'), { y: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.1);
-        tl.from(q('.o-t1'), { y: 60, opacity: 0, duration: 0.65, ease: 'expo.out' }, 0.25);
-        tl.from(q('.o-t2'), { y: 60, opacity: 0, duration: 0.65, ease: 'back.out(1.4)' }, 0.45);
-        tl.from(q('.o-sub'), { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 0.7);
-        tl.from(q('.o-colophon'), { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 0.9);
-        tl.from(q('.o-foot'), { x: 30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.15);
-        tl.fromTo(q('.o-mauve-circle'), { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 0.32, duration: 1.0, ease: 'power2.out' }, 0);
-        tl.fromTo(q('.o-saffron-dot'), { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.6, ease: 'back.out(2)' }, 0.4);
-        tl.to(q('.o-saffron-dot'), { scale: 1.1, duration: 1.5, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.2);
-        // Outro is final scene — fade to black in last 0.6s
-        tl.to([q('.o-title-block'), q('.o-colophon'), q('.o-foot'), q('.o-meta-top'), q('.o-saffron-dot'), q('.o-mauve-circle')], { opacity: 0, duration: 0.6, ease: 'power2.in' }, 5.4);
+        const qa = (s) => Array.from(root.querySelectorAll(s));
+
+        qa('[data-split]').forEach(el => {
+          const txt = el.textContent;
+          el.textContent = '';
+          for (const ch of txt) {
+            const s = document.createElement('span');
+            s.className = 'chr';
+            s.textContent = ch === ' ' ? '\u00A0' : ch;
+            el.appendChild(s);
+          }
+        });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Mauve wipe
+        tl.to('.o-wipe', { scaleX: 0, duration: 0.55, ease: 'power4.inOut' }, 0);
+        tl.set('.o-wipe', { display: 'none' }, 0.55);
+
+        tl.from('.o-meta-l', { x: -40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.3);
+        tl.from('.o-meta-r', { x: 40, opacity: 0, duration: 0.5, ease: 'power3.out' }, 0.35);
+
+        tl.from('.o-t1 .chr', { y: 80, scale: 1.2, opacity: 0, duration: 0.55, ease: 'back.out(2.2)', stagger: 0.035 }, 0.45);
+        tl.from('.o-t2 .chr', { y: 80, rotation: -3, opacity: 0, duration: 0.55, ease: 'back.out(2.0)', stagger: 0.04 }, 0.75);
+
+        tl.from('.o-sub', { y: 30, opacity: 0, duration: 0.5, ease: 'power2.out' }, 1.05);
+        tl.from('.o-colophon', { y: 40, opacity: 0, duration: 0.6, ease: 'power3.out' }, 1.25);
+        tl.from('.o-col', { y: 30, opacity: 0, duration: 0.5, ease: 'back.out(1.8)', stagger: 0.12 }, 1.35);
+        tl.from('.o-foot', { x: 30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.7);
+
+        // BG patterns
+        tl.fromTo('.o-bg-halftone', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.25);
+        tl.to('.o-bg-halftone', { x: 36, y: 36, duration: 10, ease: 'none' }, 0);
+        tl.fromTo('.o-bg-diagonal', { opacity: 0 }, { opacity: 1, duration: 0.8, ease: 'power2.out' }, 0.3);
+        tl.to('.o-bg-diagonal', { x: -60, y: 60, duration: 10, ease: 'none' }, 0);
+
+        tl.fromTo('.o-mauve-circle', { scale: 0.9, opacity: 0 }, { scale: 1, opacity: 0.32, duration: 1.1, ease: 'power2.out' }, 0.15);
+        tl.fromTo('.o-saffron-dot', { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.55, ease: 'back.out(2.4)' }, 0.55);
+        tl.fromTo('.o-saffron-bar', { scaleX: 0 }, { scaleX: 1, duration: 0.55, ease: 'expo.out' }, 0.6);
+
+        tl.to('.o-saffron-dot', { scale: 1.1, duration: 1.4, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.5);
+        tl.to('.o-saffron-bar', { scaleX: 1.15, duration: 1.8, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.8);
+        tl.to('.o-mauve-circle', { scale: 1.04, duration: 2.5, ease: 'sine.inOut', yoyo: true, repeat: 1 }, 1.3);
+
+        // Final fade-to-black (only allowed on last scene)
+        tl.to(['.o-title-block', '.o-colophon', '.o-foot', '.o-meta-top', '.o-saffron-dot', '.o-mauve-circle', '.o-saffron-bar', '.o-bg-halftone', '.o-bg-diagonal'],
+          { opacity: 0, duration: 0.6, ease: 'power2.in' }, 5.4);
+
         window.__timelines['outro'] = tl;
       })();
     </script>
