@@ -11,6 +11,11 @@
       <div class="s4-forest-stripe"></div>
       <div class="s4-electric-dot"></div>
 
+      <div class="s4-photo-wrap">
+        <img class="s4-photo" src="../media/images/story4-compute.png" crossorigin="anonymous" alt="" />
+      </div>
+      <div class="s4-photo-caption">CNBC &mdash; APR 07</div>
+
       <div class="s4-meta-top">
         <span class="s4-meta-l">ENTRY 04 OF 05</span>
         <span class="s4-meta-r">cnbc.com</span>
@@ -24,11 +29,6 @@
           <span class="s4-h-bold2" data-split>POWER.</span>
         </h1>
         <div class="s4-path">broadcom + google tpus &middot; 2026-04-07</div>
-
-        <div class="s4-photo-wrap">
-          <img class="s4-photo" src="../media/images/story4-compute.png" crossorigin="anonymous" alt="" />
-          <div class="s4-photo-caption">PHOTO &mdash; EDITORIAL / COMPUTE</div>
-        </div>
 
         <div class="s4-metric-row">
           <div class="s4-metric-num" id="s4-num">0.0</div>
@@ -186,27 +186,33 @@
         opacity: 0.7;
       }
       [data-composition-id="story-4"] .s4-photo-wrap {
-        position: relative;
-        width: 100%;
-        max-width: 940px;
-        align-self: flex-start;
+        position: absolute;
+        top: 820px;
+        right: -80px;
+        width: 560px;
+        height: 560px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 6px solid #2B4BFF;
+        box-shadow: 18px 18px 0 rgba(26,26,26,0.12);
+        z-index: 1;
       }
       [data-composition-id="story-4"] .s4-photo {
         display: block;
         width: 100%;
-        height: 220px;
+        height: 100%;
         object-fit: cover;
-        border: 3px solid #1A1A1A;
-        box-shadow: 10px 10px 0 rgba(43,75,255,0.22);
+        object-position: center;
       }
       [data-composition-id="story-4"] .s4-photo-caption {
+        position: absolute;
+        top: 1420px;
+        right: 70px;
         font-family: 'JetBrains Mono', monospace;
-        font-size: 15px;
-        letter-spacing: 0.22em;
-        color: #1A1A1A;
-        opacity: 0.65;
-        margin-top: 10px;
-        text-align: left;
+        font-size: 14px;
+        letter-spacing: 0.24em;
+        color: #2B4BFF;
+        z-index: 2;
       }
       [data-composition-id="story-4"] .s4-metric-row {
         display: flex;
@@ -334,10 +340,10 @@
 
         tl.from('.s4-path', { x: -30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.35);
 
-        // Image band
-        tl.fromTo('.s4-photo', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 0.55, ease: 'power3.out' }, 1.1);
-        tl.from('.s4-photo-wrap', { y: 20, duration: 0.5, ease: 'power3.out' }, 1.1);
-        tl.from('.s4-photo-caption', { y: 8, opacity: 0, duration: 0.3, ease: 'power2.out' }, 1.5);
+        // Circular portal — scale + rotate in
+        tl.fromTo('.s4-photo-wrap', { scale: 0.2, opacity: 0, rotation: -20 }, { scale: 1, opacity: 1, rotation: 0, duration: 0.9, ease: 'back.out(1.8)' }, 0.85);
+        tl.fromTo('.s4-photo', { scale: 1.3 }, { scale: 1, duration: 1.2, ease: 'power2.out' }, 0.85);
+        tl.from('.s4-photo-caption', { x: 20, opacity: 0, duration: 0.35, ease: 'power2.out' }, 1.55);
 
         // Big number count-up
         const num = q('#s4-num');
