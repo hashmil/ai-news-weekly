@@ -25,6 +25,11 @@
         </h1>
         <div class="s2-path">openai.com &middot; codex</div>
 
+        <div class="s2-photo-wrap">
+          <img class="s2-photo" src="../media/images/story2-codex.png" crossorigin="anonymous" alt="" />
+          <div class="s2-photo-caption">PHOTO &mdash; EDITORIAL / OPENAI</div>
+        </div>
+
         <div class="s2-metric-wrap">
           <div class="s2-metric-label">POWERS GRANTED</div>
           <div class="s2-metric">
@@ -184,6 +189,29 @@
         letter-spacing: 0.08em;
         opacity: 0.75;
       }
+      [data-composition-id="story-2"] .s2-photo-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 940px;
+        align-self: flex-start;
+      }
+      [data-composition-id="story-2"] .s2-photo {
+        display: block;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border: 3px solid #F5EDE0;
+        box-shadow: 10px 10px 0 rgba(255,201,60,0.25);
+      }
+      [data-composition-id="story-2"] .s2-photo-caption {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        letter-spacing: 0.22em;
+        color: #F5EDE0;
+        opacity: 0.7;
+        margin-top: 10px;
+        text-align: left;
+      }
       [data-composition-id="story-2"] .s2-metric-wrap {
         display: flex;
         flex-direction: column;
@@ -311,20 +339,25 @@
         tl.from('.s2-path', { x: -30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.3);
 
         // Metric
-        tl.from('.s2-metric-label', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.45);
-        tl.from('.s2-m-word', { y: 40, scale: 0.5, opacity: 0, duration: 0.45, ease: 'back.out(2.4)', stagger: 0.12 }, 1.55);
-        tl.from('.s2-m-sep', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2)', stagger: 0.12 }, 1.62);
-        tl.from('.s2-metric-tag', { x: 30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.0);
+        // Image band
+        tl.fromTo('.s2-photo', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 0.55, ease: 'power3.out' }, 1.05);
+        tl.from('.s2-photo-wrap', { y: 20, duration: 0.5, ease: 'power3.out' }, 1.05);
+        tl.from('.s2-photo-caption', { y: 8, opacity: 0, duration: 0.3, ease: 'power2.out' }, 1.45);
+
+        tl.from('.s2-metric-label', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.6);
+        tl.from('.s2-m-word', { y: 40, scale: 0.5, opacity: 0, duration: 0.45, ease: 'back.out(2.4)', stagger: 0.12 }, 1.7);
+        tl.from('.s2-m-sep', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2)', stagger: 0.12 }, 1.78);
+        tl.from('.s2-metric-tag', { x: 30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.15);
 
         // Callout
-        tl.fromTo('.s2-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.15);
-        tl.from('.s2-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.2);
-        tl.from('.s2-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.4);
-        tl.from('.s2-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.5);
+        tl.fromTo('.s2-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.3);
+        tl.from('.s2-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.35);
+        tl.from('.s2-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.55);
+        tl.from('.s2-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.65);
 
         // Foot
-        tl.from('.s2-dots .s2-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.65);
-        tl.from('.s2-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.75);
+        tl.from('.s2-dots .s2-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.8);
+        tl.from('.s2-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.9);
 
         // Ambient
         // BG patterns

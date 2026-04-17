@@ -24,6 +24,11 @@
         </h1>
         <div class="s1-path">claude.ai &middot; api.anthropic.com</div>
 
+        <div class="s1-photo-wrap">
+          <img class="s1-photo" src="../media/images/story1-opus.png" crossorigin="anonymous" alt="" />
+          <div class="s1-photo-caption">PHOTO &mdash; EDITORIAL / ANTHROPIC</div>
+        </div>
+
         <div class="s1-metric-row">
           <div class="s1-metric-label">VERSION</div>
           <div class="s1-metric" id="s1-num">0.0</div>
@@ -167,6 +172,29 @@
         letter-spacing: 0.08em;
         opacity: 0.7;
       }
+      [data-composition-id="story-1"] .s1-photo-wrap {
+        position: relative;
+        width: 100%;
+        max-width: 940px;
+        align-self: flex-start;
+      }
+      [data-composition-id="story-1"] .s1-photo {
+        display: block;
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        border: 3px solid #1A1A1A;
+        box-shadow: 10px 10px 0 rgba(255,74,28,0.18);
+      }
+      [data-composition-id="story-1"] .s1-photo-caption {
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 15px;
+        letter-spacing: 0.22em;
+        color: #1A1A1A;
+        opacity: 0.65;
+        margin-top: 10px;
+        text-align: left;
+      }
       [data-composition-id="story-1"] .s1-metric-row {
         display: flex;
         align-items: baseline;
@@ -303,32 +331,37 @@
         tl.from('.s1-path', { x: -30, opacity: 0, duration: 0.45, ease: 'power2.out' }, 1.25);
 
         // 7. Metric label
-        tl.from('.s1-metric-label', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.4);
+        // Image band reveal
+        tl.fromTo('.s1-photo', { clipPath: 'inset(0 100% 0 0)' }, { clipPath: 'inset(0 0% 0 0)', duration: 0.55, ease: 'power3.out' }, 1.0);
+        tl.from('.s1-photo-wrap', { y: 20, duration: 0.5, ease: 'power3.out' }, 1.0);
+        tl.from('.s1-photo-caption', { y: 8, opacity: 0, duration: 0.3, ease: 'power2.out' }, 1.4);
+
+        tl.from('.s1-metric-label', { y: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.55);
 
         // 8. Metric number count-up (0 → 4.7) with scale pop
         const num = q('#s1-num');
         const counter = { val: 0.0 };
-        tl.fromTo(num, { scale: 0.3, opacity: 0 }, { scale: 1.12, opacity: 1, duration: 0.5, ease: 'back.out(2.4)' }, 1.5);
+        tl.fromTo(num, { scale: 0.3, opacity: 0 }, { scale: 1.12, opacity: 1, duration: 0.5, ease: 'back.out(2.4)' }, 1.65);
         tl.to(counter, {
           val: 4.7,
           duration: 0.9,
           ease: 'power3.out',
           onUpdate: () => { num.textContent = counter.val.toFixed(1); }
-        }, 1.5);
-        tl.to(num, { scale: 1, duration: 0.35, ease: 'power2.out' }, 2.0);
+        }, 1.65);
+        tl.to(num, { scale: 1, duration: 0.35, ease: 'power2.out' }, 2.15);
 
         // 9. Metric tag
-        tl.from('.s1-metric-tag', { x: 30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 1.9);
+        tl.from('.s1-metric-tag', { x: 30, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.05);
 
         // 10. Callout stripe grows before text
-        tl.fromTo('.s1-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.1);
-        tl.from('.s1-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.15);
-        tl.from('.s1-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.35);
-        tl.from('.s1-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.45);
+        tl.fromTo('.s1-callout-stripe', { scaleY: 0 }, { scaleY: 1, duration: 0.45, ease: 'power3.out' }, 2.25);
+        tl.from('.s1-callout', { x: -30, opacity: 0, duration: 0.5, ease: 'power3.out' }, 2.3);
+        tl.from('.s1-callout-label', { y: 14, opacity: 0, duration: 0.35, ease: 'power2.out' }, 2.5);
+        tl.from('.s1-callout-body', { y: 18, opacity: 0, duration: 0.45, ease: 'power2.out' }, 2.6);
 
         // 11. Foot dots stagger pop
-        tl.from('.s1-dots .s1-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.6);
-        tl.from('.s1-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.7);
+        tl.from('.s1-dots .s1-d', { scale: 0, opacity: 0, duration: 0.3, ease: 'back.out(2.4)', stagger: 0.05 }, 2.75);
+        tl.from('.s1-counter', { x: 20, opacity: 0, duration: 0.4, ease: 'power2.out' }, 2.85);
 
         // Ambient / continuous
         // BG patterns
